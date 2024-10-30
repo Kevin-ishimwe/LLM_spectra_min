@@ -1,0 +1,2356 @@
+[
+  {
+    "formula": "C4H8O2",
+    "nmr_challenge_id": 1,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.07,
+        "range": [
+          2.08,
+          2.05
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (q)",
+        "shift": 4.14,
+        "range": [
+          4.17,
+          4.11
+        ],
+        "hydrogens": 2,
+        "integral": 2.05,
+        "class": "q",
+        "j_values": [
+          7.14,
+          7.14,
+          7.14
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (t)",
+        "shift": 1.28,
+        "range": [
+          1.3,
+          1.26
+        ],
+        "hydrogens": 3,
+        "integral": 3.02,
+        "class": "t",
+        "j_values": [
+          7.16,
+          7.16
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C4H10O",
+    "nmr_challenge_id": 2,
+    "peaks": [
+      {
+        "name": "A (t)",
+        "shift": 0.93,
+        "range": [
+          0.95,
+          0.9
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "t",
+        "j_values": [
+          7.47,
+          7.47
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (h)",
+        "shift": 3.73,
+        "range": [
+          3.77,
+          3.68
+        ],
+        "hydrogens": 1,
+        "integral": 1.0,
+        "class": "h",
+        "j_values": [
+          6.2,
+          6.2,
+          6.17,
+          6.17,
+          6.17
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (d)",
+        "shift": 1.18,
+        "range": [
+          1.2,
+          1.16
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "d",
+        "j_values": [
+          6.2
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "D (m)",
+        "shift": 1.48,
+        "range": [
+          1.52,
+          1.43
+        ],
+        "hydrogens": 2,
+        "integral": 2.01,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "E (s)",
+        "shift": 1.58,
+        "range": [
+          1.66,
+          1.56
+        ],
+        "hydrogens": 2,
+        "integral": 1.52,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C5H8O",
+    "nmr_challenge_id": 3,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.16,
+        "range": [
+          2.2,
+          2.13
+        ],
+        "hydrogens": 4,
+        "integral": 4.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 1.96,
+        "range": [
+          1.99,
+          1.92
+        ],
+        "hydrogens": 4,
+        "integral": 4.01,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C9H12",
+    "nmr_challenge_id": 5,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 6.82,
+        "range": [
+          6.86,
+          6.78
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 2.29,
+        "range": [
+          2.31,
+          2.28
+        ],
+        "hydrogens": 9,
+        "integral": 9.02,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C6H8O2",
+    "nmr_challenge_id": 8,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.72,
+        "range": [
+          2.73,
+          2.71
+        ],
+        "hydrogens": 8,
+        "integral": 8.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C6H4Br2",
+    "nmr_challenge_id": 9,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 7.36,
+        "range": [
+          7.39,
+          7.32
+        ],
+        "hydrogens": 4,
+        "integral": 4.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C4H8Cl2",
+    "nmr_challenge_id": 11,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 3.58,
+        "range": [
+          3.64,
+          3.53
+        ],
+        "hydrogens": 1,
+        "integral": 1.01,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 1.95,
+        "range": [
+          1.99,
+          1.9
+        ],
+        "hydrogens": 1,
+        "integral": 1.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C3H6O",
+    "nmr_challenge_id": 18,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.17,
+        "range": [
+          2.18,
+          2.16
+        ],
+        "hydrogens": 6,
+        "integral": 6.04,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C2H6O",
+    "nmr_challenge_id": 19,
+    "peaks": [
+      {
+        "name": "A (q)",
+        "shift": 3.72,
+        "range": [
+          3.75,
+          3.69
+        ],
+        "hydrogens": 2,
+        "integral": 2.01,
+        "class": "q",
+        "j_values": [
+          7.02,
+          7.02,
+          7.02
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (t)",
+        "shift": 1.24,
+        "range": [
+          1.27,
+          1.2
+        ],
+        "hydrogens": 3,
+        "integral": 2.99,
+        "class": "t",
+        "j_values": [
+          7.01,
+          7.01
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (d)",
+        "shift": 1.44,
+        "range": [
+          1.46,
+          1.42
+        ],
+        "hydrogens": 1,
+        "integral": 1.4,
+        "class": "d",
+        "j_values": [
+          0.95
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C9H10O2",
+    "nmr_challenge_id": 24,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 9.88,
+        "range": [
+          9.94,
+          9.78
+        ],
+        "hydrogens": 1,
+        "integral": 0.93,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (dq)",
+        "shift": 7.82,
+        "range": [
+          7.93,
+          7.73
+        ],
+        "hydrogens": 2,
+        "integral": 1.9,
+        "class": "dq",
+        "j_values": [
+          2.37,
+          2.37,
+          1.97,
+          9.09
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 4.12,
+        "range": [
+          4.19,
+          4.02
+        ],
+        "hydrogens": 2,
+        "integral": 1.96,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "D (td)",
+        "shift": 1.45,
+        "range": [
+          1.54,
+          1.34
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "td",
+        "j_values": [
+          0.4,
+          7.0,
+          6.97
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "E (m)",
+        "shift": 6.99,
+        "range": [
+          7.12,
+          6.86
+        ],
+        "hydrogens": 2,
+        "integral": 1.95,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C9H10O2",
+    "nmr_challenge_id": 25,
+    "peaks": [
+      {
+        "name": "A (q)",
+        "shift": 2.6,
+        "range": [
+          2.66,
+          2.53
+        ],
+        "hydrogens": 2,
+        "integral": 2.0,
+        "class": "q",
+        "j_values": [
+          7.54,
+          7.54,
+          7.5
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (t)",
+        "shift": 1.28,
+        "range": [
+          1.33,
+          1.2
+        ],
+        "hydrogens": 3,
+        "integral": 3.04,
+        "class": "t",
+        "j_values": [
+          7.56,
+          7.56
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 7.09,
+        "range": [
+          7.15,
+          7.05
+        ],
+        "hydrogens": 2,
+        "integral": 1.98,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "D (m)",
+        "shift": 7.38,
+        "range": [
+          7.43,
+          7.32
+        ],
+        "hydrogens": 2,
+        "integral": 1.97,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "E (m)",
+        "shift": 7.23,
+        "range": [
+          7.26,
+          7.18
+        ],
+        "hydrogens": 1,
+        "integral": 1.02,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C6H10O2",
+    "nmr_challenge_id": 32,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.7,
+        "range": [
+          2.77,
+          2.62
+        ],
+        "hydrogens": 2,
+        "integral": 2.05,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 2.18,
+        "range": [
+          2.27,
+          2.1
+        ],
+        "hydrogens": 3,
+        "integral": 3.02,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C4H8O",
+    "nmr_challenge_id": 34,
+    "peaks": [
+      {
+        "name": "A (q)",
+        "shift": 2.37,
+        "range": [
+          2.45,
+          2.27
+        ],
+        "hydrogens": 2,
+        "integral": 1.97,
+        "class": "q",
+        "j_values": [
+          7.29,
+          7.29,
+          7.23
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 2.06,
+        "range": [
+          2.12,
+          1.97
+        ],
+        "hydrogens": 3,
+        "integral": 3.02,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "C (td)",
+        "shift": 0.97,
+        "range": [
+          1.03,
+          0.88
+        ],
+        "hydrogens": 3,
+        "integral": 2.99,
+        "class": "td",
+        "j_values": [
+          1.03,
+          7.33,
+          7.31
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C5H10O3",
+    "nmr_challenge_id": 35,
+    "peaks": [
+      {
+        "name": "A (q)",
+        "shift": 4.19,
+        "range": [
+          4.28,
+          4.1
+        ],
+        "hydrogens": 2,
+        "integral": 2.01,
+        "class": "q",
+        "j_values": [
+          7.13,
+          7.13,
+          7.14
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (t)",
+        "shift": 1.31,
+        "range": [
+          1.4,
+          1.2
+        ],
+        "hydrogens": 3,
+        "integral": 3.02,
+        "class": "t",
+        "j_values": [
+          7.14,
+          7.14
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C5H12N2O",
+    "nmr_challenge_id": 38,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.76,
+        "range": [
+          2.83,
+          2.67
+        ],
+        "hydrogens": 12,
+        "integral": 12.08,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C2H5NO",
+    "nmr_challenge_id": 41,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.01,
+        "range": [
+          2.02,
+          2.0
+        ],
+        "hydrogens": 3,
+        "integral": 3.02,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (d)",
+        "shift": 5.55,
+        "range": [
+          5.76,
+          5.38
+        ],
+        "hydrogens": 2,
+        "integral": 2.37,
+        "class": "d",
+        "j_values": [
+          39.9
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C5H9BrO2",
+    "nmr_challenge_id": 42,
+    "peaks": [
+      {
+        "name": "A (q)",
+        "shift": 4.19,
+        "range": [
+          4.26,
+          4.11
+        ],
+        "hydrogens": 2,
+        "integral": 2.01,
+        "class": "q",
+        "j_values": [
+          7.16,
+          7.16,
+          7.15
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (t)",
+        "shift": 3.58,
+        "range": [
+          3.67,
+          3.49
+        ],
+        "hydrogens": 2,
+        "integral": 2.14,
+        "class": "t",
+        "j_values": [
+          6.88,
+          6.88
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (t)",
+        "shift": 2.91,
+        "range": [
+          2.96,
+          2.82
+        ],
+        "hydrogens": 2,
+        "integral": 2.03,
+        "class": "t",
+        "j_values": [
+          6.88,
+          6.88
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "D (t)",
+        "shift": 1.28,
+        "range": [
+          1.34,
+          1.2
+        ],
+        "hydrogens": 3,
+        "integral": 3.01,
+        "class": "t",
+        "j_values": [
+          7.15,
+          7.15
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C9H10O2",
+    "nmr_challenge_id": 44,
+    "peaks": [
+      {
+        "name": "A (q)",
+        "shift": 2.74,
+        "range": [
+          2.79,
+          2.68
+        ],
+        "hydrogens": 2,
+        "integral": 2.01,
+        "class": "q",
+        "j_values": [
+          7.59,
+          7.59,
+          7.57
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (t)",
+        "shift": 1.28,
+        "range": [
+          1.35,
+          1.2
+        ],
+        "hydrogens": 3,
+        "integral": 2.96,
+        "class": "t",
+        "j_values": [
+          7.62,
+          7.62
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 8.06,
+        "range": [
+          8.11,
+          8.0
+        ],
+        "hydrogens": 2,
+        "integral": 1.96,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "D (m)",
+        "shift": 7.31,
+        "range": [
+          7.35,
+          7.27
+        ],
+        "hydrogens": 2,
+        "integral": 1.98,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C8H14O3",
+    "nmr_challenge_id": 48,
+    "peaks": [
+      {
+        "name": "A (td)",
+        "shift": 2.41,
+        "range": [
+          2.45,
+          2.36
+        ],
+        "hydrogens": 2,
+        "integral": 2.01,
+        "class": "td",
+        "j_values": [
+          0.78,
+          7.35,
+          7.35
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (hd)",
+        "shift": 1.67,
+        "range": [
+          1.74,
+          1.61
+        ],
+        "hydrogens": 2,
+        "integral": 2.08,
+        "class": "hd",
+        "j_values": [
+          1.04,
+          7.35,
+          7.33,
+          7.33,
+          7.33,
+          7.33
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (td)",
+        "shift": 0.97,
+        "range": [
+          1.02,
+          0.89
+        ],
+        "hydrogens": 3,
+        "integral": 3.14,
+        "class": "td",
+        "j_values": [
+          0.95,
+          7.39,
+          7.31
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C6H6",
+    "nmr_challenge_id": 49,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 7.38,
+        "range": [
+          7.39,
+          7.36
+        ],
+        "hydrogens": 1,
+        "integral": 1.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C9H10O2",
+    "nmr_challenge_id": 52,
+    "peaks": [
+      {
+        "name": "A (dd)",
+        "shift": 2.74,
+        "range": [
+          2.77,
+          2.71
+        ],
+        "hydrogens": 2,
+        "integral": 2.0,
+        "class": "dd",
+        "j_values": [
+          7.2,
+          8.57
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (m)",
+        "shift": 3.02,
+        "range": [
+          3.04,
+          2.99
+        ],
+        "hydrogens": 2,
+        "integral": 1.97,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 7.31,
+        "range": [
+          7.4,
+          7.22
+        ],
+        "hydrogens": 5,
+        "integral": 4.95,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C7H8",
+    "nmr_challenge_id": 56,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.41,
+        "range": [
+          2.46,
+          2.36
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (m)",
+        "shift": 7.32,
+        "range": [
+          7.35,
+          7.28
+        ],
+        "hydrogens": 2,
+        "integral": 1.96,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 7.23,
+        "range": [
+          7.25,
+          7.19
+        ],
+        "hydrogens": 3,
+        "integral": 3.03,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C2H5I",
+    "nmr_challenge_id": 60,
+    "peaks": [
+      {
+        "name": "A (q)",
+        "shift": 3.2,
+        "range": [
+          3.27,
+          3.09
+        ],
+        "hydrogens": 2,
+        "integral": 2.01,
+        "class": "q",
+        "j_values": [
+          7.47,
+          7.47,
+          7.47
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (t)",
+        "shift": 1.84,
+        "range": [
+          1.91,
+          1.75
+        ],
+        "hydrogens": 3,
+        "integral": 3.02,
+        "class": "t",
+        "j_values": [
+          7.47,
+          7.47
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C8H8O2",
+    "nmr_challenge_id": 62,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 3.89,
+        "range": [
+          3.91,
+          3.86
+        ],
+        "hydrogens": 3,
+        "integral": 3.02,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (dd)",
+        "shift": 7.0,
+        "range": [
+          7.03,
+          6.97
+        ],
+        "hydrogens": 2,
+        "integral": 1.94,
+        "class": "dd",
+        "j_values": [
+          1.47,
+          7.84
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 7.83,
+        "range": [
+          7.88,
+          7.78
+        ],
+        "hydrogens": 2,
+        "integral": 1.95,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "D (s)",
+        "shift": 9.88,
+        "range": [
+          9.9,
+          9.86
+        ],
+        "hydrogens": 1,
+        "integral": 0.94,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C8H10O2",
+    "nmr_challenge_id": 63,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 3.81,
+        "range": [
+          3.82,
+          3.79
+        ],
+        "hydrogens": 3,
+        "integral": 3.02,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 4.61,
+        "range": [
+          4.62,
+          4.59
+        ],
+        "hydrogens": 2,
+        "integral": 1.89,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 7.29,
+        "range": [
+          7.31,
+          7.26
+        ],
+        "hydrogens": 2,
+        "integral": 1.91,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "D (m)",
+        "shift": 6.89,
+        "range": [
+          6.92,
+          6.86
+        ],
+        "hydrogens": 2,
+        "integral": 1.99,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "E (s)",
+        "shift": 1.77,
+        "range": [
+          1.79,
+          1.75
+        ],
+        "hydrogens": 1,
+        "integral": 1.21,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C9H11NO",
+    "nmr_challenge_id": 64,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 3.09,
+        "range": [
+          3.1,
+          3.08
+        ],
+        "hydrogens": 6,
+        "integral": 6.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 9.76,
+        "range": [
+          9.79,
+          9.72
+        ],
+        "hydrogens": 1,
+        "integral": 1.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "C (dt)",
+        "shift": 7.75,
+        "range": [
+          7.79,
+          7.71
+        ],
+        "hydrogens": 2,
+        "integral": 2.01,
+        "class": "dt",
+        "j_values": [
+          2.36,
+          2.36,
+          9.55
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "D (td)",
+        "shift": 6.8,
+        "range": [
+          6.84,
+          6.74
+        ],
+        "hydrogens": 2,
+        "integral": 2.06,
+        "class": "td",
+        "j_values": [
+          3.02,
+          8.38,
+          8.04
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C10H14",
+    "nmr_challenge_id": 66,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 1.35,
+        "range": [
+          1.4,
+          1.28
+        ],
+        "hydrogens": 9,
+        "integral": 9.06,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (m)",
+        "shift": 7.31,
+        "range": [
+          7.47,
+          7.13
+        ],
+        "hydrogens": 5,
+        "integral": 4.89,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C6H12",
+    "nmr_challenge_id": 67,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 1.44,
+        "range": [
+          1.53,
+          1.34
+        ],
+        "hydrogens": 12,
+        "integral": 12.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C2H3N",
+    "nmr_challenge_id": 68,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 1.93,
+        "range": [
+          2.0,
+          1.85
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C5H12",
+    "nmr_challenge_id": 69,
+    "peaks": [
+      {
+        "name": "A (t)",
+        "shift": 0.88,
+        "range": [
+          0.92,
+          0.84
+        ],
+        "hydrogens": 6,
+        "integral": 6.0,
+        "class": "t",
+        "j_values": [
+          7.15,
+          7.15
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (m)",
+        "shift": 1.28,
+        "range": [
+          1.36,
+          1.2
+        ],
+        "hydrogens": 6,
+        "integral": 6.04,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C2H6SO",
+    "nmr_challenge_id": 71,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.4,
+        "range": [
+          2.49,
+          2.32
+        ],
+        "hydrogens": 6,
+        "integral": 6.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "CH4O",
+    "nmr_challenge_id": 72,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 3.34,
+        "range": [
+          3.37,
+          3.29
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 3.65,
+        "range": [
+          3.72,
+          3.61
+        ],
+        "hydrogens": 1,
+        "integral": 1.03,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C4H10O",
+    "nmr_challenge_id": 73,
+    "peaks": [
+      {
+        "name": "A (q)",
+        "shift": 3.46,
+        "range": [
+          3.55,
+          3.37
+        ],
+        "hydrogens": 2,
+        "integral": 2.0,
+        "class": "q",
+        "j_values": [
+          7.02,
+          7.02,
+          6.98
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (t)",
+        "shift": 1.19,
+        "range": [
+          1.28,
+          1.08
+        ],
+        "hydrogens": 3,
+        "integral": 3.05,
+        "class": "t",
+        "j_values": [
+          7.04,
+          7.04
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C4H8O",
+    "nmr_challenge_id": 74,
+    "peaks": [
+      {
+        "name": "A (m)",
+        "shift": 3.66,
+        "range": [
+          3.75,
+          3.56
+        ],
+        "hydrogens": 4,
+        "integral": 4.0,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (m)",
+        "shift": 1.78,
+        "range": [
+          1.87,
+          1.69
+        ],
+        "hydrogens": 4,
+        "integral": 4.02,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C7H8O",
+    "nmr_challenge_id": 76,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 3.86,
+        "range": [
+          3.88,
+          3.84
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (tt)",
+        "shift": 7.02,
+        "range": [
+          7.05,
+          7.0
+        ],
+        "hydrogens": 1,
+        "integral": 0.94,
+        "class": "tt",
+        "j_values": [
+          1.09,
+          1.09,
+          7.32,
+          7.32
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 6.98,
+        "range": [
+          7.0,
+          6.96
+        ],
+        "hydrogens": 2,
+        "integral": 1.88,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "D (m)",
+        "shift": 7.36,
+        "range": [
+          7.39,
+          7.33
+        ],
+        "hydrogens": 2,
+        "integral": 1.87,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C4H10O2",
+    "nmr_challenge_id": 77,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 3.39,
+        "range": [
+          3.4,
+          3.38
+        ],
+        "hydrogens": 6,
+        "integral": 6.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 3.54,
+        "range": [
+          3.55,
+          3.53
+        ],
+        "hydrogens": 4,
+        "integral": 3.94,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C6H5Cl",
+    "nmr_challenge_id": 78,
+    "peaks": [
+      {
+        "name": "A (m)",
+        "shift": 7.34,
+        "range": [
+          7.36,
+          7.32
+        ],
+        "hydrogens": 2,
+        "integral": 2.0,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (m)",
+        "shift": 7.29,
+        "range": [
+          7.31,
+          7.26
+        ],
+        "hydrogens": 2,
+        "integral": 2.08,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 7.24,
+        "range": [
+          7.26,
+          7.21
+        ],
+        "hydrogens": 1,
+        "integral": 1.07,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C10H15N",
+    "nmr_challenge_id": 81,
+    "peaks": [
+      {
+        "name": "A (d)",
+        "shift": 1.13,
+        "range": [
+          1.17,
+          1.07
+        ],
+        "hydrogens": 6,
+        "integral": 6.0,
+        "class": "d",
+        "j_values": [
+          6.39
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (m)",
+        "shift": 7.29,
+        "range": [
+          7.37,
+          7.23
+        ],
+        "hydrogens": 5,
+        "integral": 4.84,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "C (hept)",
+        "shift": 2.88,
+        "range": [
+          2.93,
+          2.83
+        ],
+        "hydrogens": 1,
+        "integral": 0.96,
+        "class": "hept",
+        "j_values": [
+          6.25,
+          6.25,
+          6.24,
+          6.24,
+          6.24,
+          6.24
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "D (s)",
+        "shift": 3.81,
+        "range": [
+          3.83,
+          3.79
+        ],
+        "hydrogens": 2,
+        "integral": 1.95,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "E (s)",
+        "shift": 1.44,
+        "range": [
+          1.53,
+          1.38
+        ],
+        "hydrogens": 1,
+        "integral": 0.92,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C7H12O",
+    "nmr_challenge_id": 82,
+    "peaks": [
+      {
+        "name": "A (ddddd)",
+        "shift": 1.65,
+        "range": [
+          1.71,
+          1.63
+        ],
+        "hydrogens": 1,
+        "integral": 1.0,
+        "class": "ddddd",
+        "j_values": [
+          1.64,
+          2.87,
+          5.03,
+          6.62,
+          8.32
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (m)",
+        "shift": 1.61,
+        "range": [
+          1.63,
+          1.56
+        ],
+        "hydrogens": 1,
+        "integral": 1.02,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 2.43,
+        "range": [
+          2.47,
+          2.39
+        ],
+        "hydrogens": 1,
+        "integral": 0.99,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C5H5N",
+    "nmr_challenge_id": 86,
+    "peaks": [
+      {
+        "name": "A (dt)",
+        "shift": 8.79,
+        "range": [
+          8.87,
+          8.72
+        ],
+        "hydrogens": 2,
+        "integral": 1.98,
+        "class": "dt",
+        "j_values": [
+          1.76,
+          1.76,
+          4.28
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (tt)",
+        "shift": 7.85,
+        "range": [
+          7.95,
+          7.76
+        ],
+        "hydrogens": 1,
+        "integral": 1.0,
+        "class": "tt",
+        "j_values": [
+          1.83,
+          1.83,
+          7.63,
+          7.63
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 7.46,
+        "range": [
+          7.54,
+          7.38
+        ],
+        "hydrogens": 2,
+        "integral": 2.06,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C4H5N",
+    "nmr_challenge_id": 88,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 8.24,
+        "range": [
+          8.52,
+          7.96
+        ],
+        "hydrogens": 1,
+        "integral": 1.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (q)",
+        "shift": 6.32,
+        "range": [
+          6.41,
+          6.21
+        ],
+        "hydrogens": 2,
+        "integral": 2.02,
+        "class": "q",
+        "j_values": [
+          2.25,
+          2.25,
+          2.21
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (q)",
+        "shift": 6.85,
+        "range": [
+          6.97,
+          6.73
+        ],
+        "hydrogens": 2,
+        "integral": 2.01,
+        "class": "q",
+        "j_values": [
+          2.26,
+          2.26,
+          2.23
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C8H10",
+    "nmr_challenge_id": 89,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.36,
+        "range": [
+          2.38,
+          2.32
+        ],
+        "hydrogens": 6,
+        "integral": 6.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 7.11,
+        "range": [
+          7.13,
+          7.09
+        ],
+        "hydrogens": 4,
+        "integral": 3.82,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C8H10",
+    "nmr_challenge_id": 90,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.29,
+        "range": [
+          2.3,
+          2.27
+        ],
+        "hydrogens": 6,
+        "integral": 6.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (m)",
+        "shift": 7.14,
+        "range": [
+          7.18,
+          7.09
+        ],
+        "hydrogens": 4,
+        "integral": 3.85,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C3H7NO",
+    "nmr_challenge_id": 93,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 1.79,
+        "range": [
+          1.82,
+          1.76
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (d)",
+        "shift": 2.57,
+        "range": [
+          2.59,
+          2.55
+        ],
+        "hydrogens": 3,
+        "integral": 2.91,
+        "class": "d",
+        "j_values": [
+          4.88
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (s)",
+        "shift": 7.15,
+        "range": [
+          7.25,
+          7.04
+        ],
+        "hydrogens": 1,
+        "integral": 0.92,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C8H10O",
+    "nmr_challenge_id": 96,
+    "peaks": [
+      {
+        "name": "A (t)",
+        "shift": 2.89,
+        "range": [
+          2.93,
+          2.85
+        ],
+        "hydrogens": 2,
+        "integral": 1.99,
+        "class": "t",
+        "j_values": [
+          6.69,
+          6.69
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (t)",
+        "shift": 3.86,
+        "range": [
+          3.9,
+          3.81
+        ],
+        "hydrogens": 2,
+        "integral": 2.0,
+        "class": "t",
+        "j_values": [
+          6.69,
+          6.69
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 7.33,
+        "range": [
+          7.39,
+          7.22
+        ],
+        "hydrogens": 5,
+        "integral": 4.83,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "D (s)",
+        "shift": 2.16,
+        "range": [
+          2.2,
+          2.13
+        ],
+        "hydrogens": 1,
+        "integral": 1.04,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C5H9N",
+    "nmr_challenge_id": 98,
+    "peaks": [
+      {
+        "name": "A (dh)",
+        "shift": 1.99,
+        "range": [
+          2.05,
+          1.92
+        ],
+        "hydrogens": 1,
+        "integral": 1.0,
+        "class": "dh",
+        "j_values": [
+          6.65,
+          6.65,
+          6.62,
+          6.62,
+          6.62,
+          13.22
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (d)",
+        "shift": 2.21,
+        "range": [
+          2.25,
+          2.18
+        ],
+        "hydrogens": 2,
+        "integral": 2.09,
+        "class": "d",
+        "j_values": [
+          6.6
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (d)",
+        "shift": 1.02,
+        "range": [
+          1.07,
+          0.96
+        ],
+        "hydrogens": 6,
+        "integral": 6.39,
+        "class": "d",
+        "j_values": [
+          6.95
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C9H10O",
+    "nmr_challenge_id": 99,
+    "peaks": [
+      {
+        "name": "A (m)",
+        "shift": 7.31,
+        "range": [
+          7.4,
+          7.2
+        ],
+        "hydrogens": 5,
+        "integral": 4.86,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 2.18,
+        "range": [
+          2.24,
+          2.12
+        ],
+        "hydrogens": 3,
+        "integral": 2.98,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "C (s)",
+        "shift": 3.72,
+        "range": [
+          3.78,
+          3.66
+        ],
+        "hydrogens": 2,
+        "integral": 2.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C6H5OBr",
+    "nmr_challenge_id": 105,
+    "peaks": [
+      {
+        "name": "A (dd)",
+        "shift": 7.51,
+        "range": [
+          7.57,
+          7.46
+        ],
+        "hydrogens": 1,
+        "integral": 1.0,
+        "class": "dd",
+        "j_values": [
+          1.6,
+          7.98
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "B (ddd)",
+        "shift": 7.26,
+        "range": [
+          7.32,
+          7.2
+        ],
+        "hydrogens": 1,
+        "integral": 1.04,
+        "class": "ddd",
+        "j_values": [
+          1.56,
+          7.34,
+          8.21
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (dd)",
+        "shift": 7.1,
+        "range": [
+          7.15,
+          7.05
+        ],
+        "hydrogens": 1,
+        "integral": 1.01,
+        "class": "dd",
+        "j_values": [
+          1.54,
+          8.1
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "D (ddd)",
+        "shift": 6.86,
+        "range": [
+          6.92,
+          6.8
+        ],
+        "hydrogens": 1,
+        "integral": 1.02,
+        "class": "ddd",
+        "j_values": [
+          1.55,
+          7.26,
+          7.96
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "E (s)",
+        "shift": 5.75,
+        "range": [
+          6.0,
+          5.5
+        ],
+        "hydrogens": 1,
+        "integral": 0.88,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C7H5ClO2",
+    "nmr_challenge_id": 112,
+    "peaks": [
+      {
+        "name": "A (m)",
+        "shift": 7.46,
+        "range": [
+          7.51,
+          7.4
+        ],
+        "hydrogens": 2,
+        "integral": 2.05,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (m)",
+        "shift": 8.04,
+        "range": [
+          8.09,
+          7.99
+        ],
+        "hydrogens": 2,
+        "integral": 2.0,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C8H10BrN",
+    "nmr_challenge_id": 113,
+    "peaks": [
+      {
+        "name": "A (m)",
+        "shift": 7.3,
+        "range": [
+          7.33,
+          7.28
+        ],
+        "hydrogens": 2,
+        "integral": 2.0,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (s)",
+        "shift": 2.93,
+        "range": [
+          2.96,
+          2.9
+        ],
+        "hydrogens": 6,
+        "integral": 6.42,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "C (d)",
+        "shift": 6.6,
+        "range": [
+          6.65,
+          6.56
+        ],
+        "hydrogens": 2,
+        "integral": 2.05,
+        "class": "d",
+        "j_values": [
+          8.52
+        ],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C6H7N",
+    "nmr_challenge_id": 115,
+    "peaks": [
+      {
+        "name": "A (m)",
+        "shift": 8.41,
+        "range": [
+          8.48,
+          8.35
+        ],
+        "hydrogens": 2,
+        "integral": 1.9,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (ddt)",
+        "shift": 7.21,
+        "range": [
+          7.27,
+          7.14
+        ],
+        "hydrogens": 2,
+        "integral": 1.96,
+        "class": "ddt",
+        "j_values": [
+          0.76,
+          0.76,
+          1.54,
+          5.04
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (s)",
+        "shift": 2.31,
+        "range": [
+          2.33,
+          2.29
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C3H4O4",
+    "nmr_challenge_id": 122,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 3.23,
+        "range": [
+          3.25,
+          3.22
+        ],
+        "hydrogens": 2,
+        "integral": 2.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  },
+  {
+    "formula": "C4H10N2",
+    "nmr_challenge_id": 124,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 2.59,
+        "range": [
+          2.61,
+          2.56
+        ],
+        "hydrogens": 8,
+        "integral": 8.0,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  }
+]
