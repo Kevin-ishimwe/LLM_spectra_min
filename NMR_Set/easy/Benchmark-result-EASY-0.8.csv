@@ -1,0 +1,54 @@
+Id,Formula,TrueName,Prediction,Verdict
+1,C4H8O2,ethyl acetate,ethyl acetate,1
+2,c4h10o,butan-2-ol,isopropyl alcohol,0
+3,C5H8O,cyclopentanone,cyclopentanone,1
+5,c9h12,mesityliene,tert-butylbenzene,0
+8,c6h8o2,"1,4-cyklohexandienon","1,4-dioxane",0
+9,c6h4br2,"1,4-dibrombenzene","1,4-dibromobenzene",1
+11,C4H8Cl2,"1,4-dichlorobutane","1,4-dichlorobutane",1
+18,C3H6O,acetone,acetone,1
+19,C2H6O,ethanol,ethanol,1
+24,c9h10o2,4-ethoxybenzaldehyde,ethyl vanillin,0
+25,c9h10o2,phenyl propinate,ethyl benzoate,0
+32,c6h10o2,hexane-2,"5-dion,methyl pentanoate",0
+34,c4h8o,butan-2-on(butanone),2-butanone,1
+35,c5h10o3,diethyl-carbonate,ethyl acetate,0
+38,c5h12n2o,tetramethylurea,"n,n,n',n'-tetramethylmethanediamine",1
+41,c2h5no,acetamide,acetamide,1
+42,C5H9BrO2,ethyl-2-bromopropionate,ethyl 2-bromopropanoate,1
+44,c9h10o2,4-eethylbenzoic acid,ethyl benzoate,0
+48,c8h14o3,butyric anhydride,ethyl hexanoate,0
+49,C6H6,benzene,benzene,1
+52,c9h10o2,hydrocinnammic acid,ethyl benzoate,0
+56,C7H8,toluene,toluene,1
+60,c2h5i,iodoethane/ ethyl iodide,ethyl iodide,1
+62,c8h8o2,p-anisaldehyde/4-methoxybenzaldehyde,4-methoxybenzaldehyde,1
+63,c8h10o2,4-methoxybenzyl alcohol,4-methoxyphenol,0
+64,c9h11no,para-dimethylaminobenzaldehyde,"n,n-dimethyl-p-toluidine",0
+66,C10H14,t-butylbenzene,tert-butylbenzene,1
+67,C6H12,cyclohexane,cyclohexane,1
+68,c2h3n,acetonitril,acetonitrile,1
+69,C5H12,pentane,pentane,1
+71,c2h6so,dmso/dimethyl sulfoxide,dimethyl sulfoxide,0
+72,CH4O,methanol,methanol,1
+73,c4h10o,diethyl ether,ethanol,0
+74,c4h8o,tetrahydrofuran,3-buten-1-ol,0
+76,c7h8o,anisol,anisole,1
+77,C4H10O2,dimethoxyethane,"1,2-dimethoxyethane",1
+78,C6H5Cl,chlorobenzene,chlorobenzene,1
+81,c10h15n,isopropylbenzylamin,n-isopropylaniline,0
+82,c7h12o,cycloheptanone,"3,4-dihydro-2h-pyran",0
+86,C5H5N,pyridine,pyridine,1
+88,c4h5n,pyrrol,pyrrole,1
+89,C8H10,p-xylene,p-xylene,1
+90,c8h10,o-xylene,p-xylene,0
+93,c3h7no,n-methylacetamide/dr93,"n,n-dimethylformamide",0
+96,c8h10o,2-phenylethan-1-ol/dr96,phenetole,0
+98,c5h9n,3-methylbutanenitrile/dr98,n-isopropyl methyleneamine,0
+99,c9h10o,1-phenylpropan-2-one/dr99,p-methoxytoluene,0
+105,C6H5OBr,2-bromophenol,2-bromophenol,1
+112,C7H5ClO2,4-chlorobenzoic acid,4-chlorobenzoic acid,1
+113,C8H10BrN,"4-bromo-n,n-dimethylaniline","4-bromo-n,n-dimethylaniline",1
+115,c6h7n,4-methylpyridine,3-methylpyridine,0
+122,C3H4O4,malonic acid,malonic acid,1
+124,c4h10n2,piperazine,"1,4-diaminobutane",0
