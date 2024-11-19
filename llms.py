@@ -11,16 +11,12 @@ client = OpenAI(
     api_key=API_KEY
   )
 #use openai gtp4o for inference 
-def call_openAI(NMR_data, model = "gpt-4o",system_prompt=system_prompt):
+def call_openAI(conversation,prompt, model = "gpt-4o",temperature=1):
+  conversation.append( {"role": "user", "content":prompt })
   completion = client.chat.completions.create(
-  temperature=1,
+  temperature=temperature,
   model=model,
-  messages=[
-    {"role": "system", "content":system_prompt} ,
-    {"role": "user", "content": f"""{user_prompt(NMR_data)}"""}
-  ]
-  ,
-  )
+  messages=conversation)
   txt=completion.choices[0].message.content
-  print(count_tokens(txt))
+  conversation.append({"role": "assistant", "content": txt})
   return txt,txt.split("### Start answer ###")[1].split("### End answer ###")[0].replace('\n','').strip().lower()

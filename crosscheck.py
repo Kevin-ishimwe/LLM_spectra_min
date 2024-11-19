@@ -68,14 +68,13 @@ def cross_check_molecule(llmgeneration, correct_molecule):
     print(options)
     for molecule in options:
         cleaned = normalize_string(molecule)
-        print(cleaned, llmcleaned)
         if cleaned == llmcleaned:
             print("\033[92mThe molecules were a match\033[0m")
             print(llmgeneration,"\n",correct_molecule)
             return True
 
     print("\033[91mThe molecules were not a match\033[0m")
-    print(f"\033[94m_________________________________________________\n\n [INFO] llmgeneration: {llmgeneration} \n [INFO] Options of correct name :\n_________________________________________________\n","\033[0m","\n".join(options),'\n\033[94m_________________________________________________\033[0m\n')
+    print(f"\033[94m_________________________________________________\n\n [INFO] llmgeneration: {llmgeneration} \n [INFO] Options of correct name :\n_________________________________________________\n","\033[0m\n","\n".join(options),'\n\033[94m_________________________________________________\033[0m\n')
     return False
 
 def check_batchData_output(file_path):

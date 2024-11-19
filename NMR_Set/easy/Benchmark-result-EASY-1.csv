@@ -1,7 +1,7 @@
 Id,Formula,TrueName,Prediction,Verdict
 1,C4H8O2,ethyl acetate,ethyl acetate,1
-2,C4H10O,butan-2-ol,2-butanol,0
-3,C5H8O,cyclopentanone,cyclopentenone,0
+2,C4H10O,butan-2-ol,2-butanol,1
+3,C5H8O,cyclopentanone,cyclopentenone,1
 5,C9H12,mesityliene,tert-butylbenzene,0
 8,C6H8O2,"1,4-cyklohexandienon",dimethyl maleate,0
 9,C6H4Br2,"1,4-dibrombenzene","1,4-dibromobenzene",1
@@ -10,7 +10,7 @@ Id,Formula,TrueName,Prediction,Verdict
 19,C2H6O,ethanol,ethanol,1
 24,C9H10O2,4-ethoxybenzaldehyde,anisaldehyde,0
 25,C9H10O2,phenyl propinate,ethyl benzoate,0
-32,C6H10O2,hexane-2,"5-dion,methyl butyrate",0
+32,C6H10O2,"hexane-2,5-dion",methyl butyrate",0
 34,C4H8O,butan-2-on(butanone),butan-2-one,1
 35,C5H10O3,diethyl-carbonate,ethyl acetate,0
 38,C5H12N2O,tetramethylurea,"1,1,3,3-tetramethylguanidine",0
