@@ -1,0 +1,80 @@
+  {
+    "formula": "C9H10O2",
+    "nmr_challenge_id": 24,
+    "peaks": [
+      {
+        "name": "A (s)",
+        "shift": 9.88,
+        "range": [
+          9.94,
+          9.78
+        ],
+        "hydrogens": 1,
+        "integral": 0.93,
+        "class": "s",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "B (dq)",
+        "shift": 7.82,
+        "range": [
+          7.93,
+          7.73
+        ],
+        "hydrogens": 2,
+        "integral": 1.9,
+        "class": "dq",
+        "j_values": [
+          2.37,
+          2.37,
+          1.97,
+          9.09
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "C (m)",
+        "shift": 4.12,
+        "range": [
+          4.19,
+          4.02
+        ],
+        "hydrogens": 2,
+        "integral": 1.96,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      },
+      {
+        "name": "D (td)",
+        "shift": 1.45,
+        "range": [
+          1.54,
+          1.34
+        ],
+        "hydrogens": 3,
+        "integral": 3.0,
+        "class": "td",
+        "j_values": [
+          0.4,
+          7.0,
+          6.97
+        ],
+        "method": "Sum"
+      },
+      {
+        "name": "E (m)",
+        "shift": 6.99,
+        "range": [
+          7.12,
+          6.86
+        ],
+        "hydrogens": 2,
+        "integral": 1.95,
+        "class": "m",
+        "j_values": [],
+        "method": "Sum"
+      }
+    ]
+  }
