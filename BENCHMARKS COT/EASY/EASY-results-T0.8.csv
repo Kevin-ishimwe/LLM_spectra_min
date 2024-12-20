@@ -1,0 +1,54 @@
+Id,Formula,TrueName,SMILE-correct,Prediction,SMILE-LLM,Verdict,Isomers
+1,C4H8O2,"ethyl acetate","CCOC(C)=O","ethyl acetate","CCOC(C)=O",1,N/A
+2,C4H10O,"butan-2-ol","CCC(C)O","isobutanol","CC(C)CO",0,N/A
+3,C5H8O,"cyclopentanone","O=C1CCCC1","pent-4-en-2-one","CC(=O)CC=C",0,N/AId,Formula,TrueName,SMILE-correct,Prediction,SMILE-LLM,Verdict,Isomers
+5,C9H12,"mesitylene","Cc1cc(C)cc(C)c1","mesitylene","Cc1cc(C)cc(C)c1",1,N/A
+8,C6H8O2,"1,4-cyclohexanedione","O=C1CCC(=O)CC1","dimethyl terephthalate","COC(=O)c1ccc(cc1)C(=O)OC",0,N/A
+9,C6H4Br2,"1,4-dibromobenzene","Brc1ccc(Br)cc1","para-dibromobenzene","Brc1ccc(Br)cc1",1,N/A
+11,C4H8Cl2,"1,4-dichlorobutane","ClCCCCCl","1,4-dichlorobutane","ClCCCCCl",1,N/A
+18,C3H6O,"acetone","CC(C)=O","acetone","CC(C)=O",1,N/A
+19,C2H6O,"ethanol","CCO","ethanol","CCO",1,N/A
+24,C9H10O2,"4-ethoxybenzaldehyde","CCOc1ccc(C=O)cc1","4-ethoxybenzaldehyde","CCOc1ccc(C=O)cc1",1,N/A
+25,C9H10O2,"Phenyl propionate","CCC(=O)Oc1ccccc1","ethyl benzoate","CCOC(=O)c1ccccc1",0,N/A
+32,C6H10O2,"hexane-2,5-dion","CC(=O)CCC(C)=O","methyl methacrylate","COC(=O)C(C)=C",0,N/A
+34,C4H8O,"Butan-2-one","CCC(C)=O","2-butanone","CCC(C)=O",0,N/A
+35,C5H10O3,"diethyl-carbonate","CCOC(=O)OCC","ethyl 2-hydroxypropanoate","CCOC(=O)C(C)O",0,N/A
+38,C5H12N2O,"tetramethylurea","CN(C)C(=O)N(C)C","1,1-dimethylethylhydrazine","CC(C)(C)NN",0,N/A
+41,C2H5NO,"acetamide","CC(N)=O","acetaldoxime","CC=NO",0,N/A
+42,C5H9BrO2,"ethyl-2-bromopropionate","CCOC(=O)C(C)Br","ethyl 2-bromopropanoate","CCOC(=O)C(C)Br",1,N/A
+44,C9H10O2,"4-ethylbenzoic acid","CCc1ccc(cc1)C(O)=O","ethyl benzoate","CCOC(=O)c1ccccc1",0,N/A
+48,C8H14O3,"butyric anhydride","CCCC(=O)OC(=O)CCC","ethyl 4-hydroxybutanoate","CCOC(=O)CCCO",0,N/A
+49,C6H6,"benzene","c1ccccc1","benzene","c1ccccc1",1,N/A
+52,C9H10O2,"hydrocinnamic acid","OC(=O)CCc1ccccc1","ethyl benzoate","CCOC(=O)c1ccccc1",0,N/A
+56,C7H8,"toluene","Cc1ccccc1","toluene","Cc1ccccc1",1,N/A
+60,C2H5I,"iodoethane","CCI","ethyl iodide","CCI",0,N/A
+62,C8H8O2,"4-methoxybenzaldehyde","[H]C(=O)c1ccc(OC)cc1","para-anisaldehyde","COc1ccc(C=O)cc1",0,N/A
+63,C8H10O2,"4-methoxybenzyl alcohol","COc1ccc(CO)cc1","methyl 4-hydroxybenzoate","COC(=O)c1ccc(O)cc1",0,N/A
+64,C9H11NO,"para-dimethylaminobenzaldehyde","CN(C)c1ccc(C=O)cc1","4-(dimethylamino)benzaldehyde","CN(C)c1ccc(C=O)cc1",1,N/A
+66,C10H14,"t-butylbenzene","CC(C)(C)c1ccccc1","tert-butylbenzene","CC(C)(C)c1ccccc1",1,N/A
+67,C6H12,"cyclohexane","C1CCCCC1","cyclohexane","C1CCCCC1",1,N/A
+68,C2H3N,"acetonitrile","CC#N","acetonitrile","CC#N",1,N/A
+69,C5H12,"pentane","CCCCC","2-methylbutane","CCC(C)C",0,N/A
+71,C2H6SO,"dimethyl sulfoxide","C[S](C)=O","dimethyl sulfoxide","C[S](C)=O",1,N/A
+72,CH4O,"methanol","CO","methanol","CO",1,N/A
+73,C4H10O,"diethyl ether","CCOCC","diethyl ether","CCOCC",1,N/A
+74,C4H8O,"tetrahydrofuran","C1CCOC1","diethyl ether","CCOCC",0,N/A
+76,C7H8O,"anisole","COc1ccccc1","anisole","COc1ccccc1",1,N/A
+77,C4H10O2,"dimethoxyethane","COCCOC","1,2-dimethoxyethane","COCCOC",1,N/A
+78,C6H5Cl,"chlorobenzene","Clc1ccccc1","chlorobenzene","Clc1ccccc1",1,N/A
+81,C10H15N,"isopropylbenzylamin","CC(C)NCc1ccccc1","n-ethylamphetamine","CCNC(C)Cc1ccccc1",0,N/A
+82,C7H12O,"cycloheptanone","O=C1CCCCCC1","3-methyl-2-cyclohexen-1-one","CC1=CC(=O)CCC1",0,N/A
+86,C5H5N,"pyridine","c1ccncc1","pyridine","c1ccncc1",1,N/A
+88,C4H5N,"pyrrole","[nH]1cccc1","pyrrole","[nH]1cccc1",1,N/A
+89,C8H10,"p-xylene","Cc1ccc(C)cc1","p-xylene","Cc1ccc(C)cc1",1,N/A
+90,C8H10,"o-xylene","Cc1ccccc1C","ethylbenzene","CCc1ccccc1",0,N/A
+93,C3H7NO,"n-methylacetamide","CNC(C)=O","n,n-dimethylformamide","CN(C)C=O",0,N/A
+96,C8H10O,"2-phenylethanol","OCCc1ccccc1","ethoxybenzene","CCOc1ccccc1",0,N/A
+98,C5H9N,"3-methylbutanenitrile","CC(C)CC#N","n-methylpyrrolidine","CN1CCCC1",0,N/A
+99,C9H10O,"1-phenylpropan-2-one","CC(=O)Cc1ccccc1","phenetole","CCOc1ccccc1",0,N/A
+105,C6H5OBr,"2-bromophenol","Oc1ccccc1Br","4-bromophenol","Oc1ccc(Br)cc1",0,N/A
+112,C7H5ClO2,"4-chlorobenzoic acid","OC(=O)c1ccc(Cl)cc1","4-chlorobenzoic acid","OC(=O)c1ccc(Cl)cc1",1,N/A
+113,C8H10BrN,"4-bromo-n,n-dimethylaniline","CN(C)c1ccc(Br)cc1","2-bromo-n,n-dimethylaniline","CN(C)c1ccccc1Br",0,N/A
+115,C6H7N,"4-methylpyridine","Cc1ccncc1","2-methylpyridine","Cc1ccccn1",0,N/A
+122,C3H4O4,"malonic acid","OC(=O)CC(O)=O","malonic acid","OC(=O)CC(O)=O",1,N/A
+124,C4H10N2,"piperazine","C1CNCCN1","1,4-butanediamine","NCCCCN",0,N/A

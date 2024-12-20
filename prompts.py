@@ -25,7 +25,7 @@ def consistency_reprompt():
 
 def regeneration_prompt():
     return f"""
-            re-analyse the spectra data and
+            re-analyse the spectra data
             ### Scratchpad ### <scratchpad> ### Scratchpad ###
             ### Start answer ### <prediction> ### End answer ###
             The prediction should only contain the name of the molecule and no other text

@@ -1,0 +1,25 @@
+Id,Formula,TrueName,SMILE-correct,Prediction,SMILE-LLM,Verdict,Isomers
+6,C4H8O3,"ethylene glycolate","OCC(O)=O.C=C","ethyl glycolate","CCOC(=O)CO",0,N/A
+22,C9H10O2,"2-ethoxy benzaldehyde","CCOc1ccccc1C=O","ethyl benzoate","CCOC(=O)c1ccccc1",0,N/A
+43,C9H10O2,"2-hydroxypropiophenone","CC(O)C(=O)c1ccccc1","ethyl benzoate","CCOC(=O)c1ccccc1",0,N/A
+45,C9H10O2,"4-chromanol","OC1CCOc2ccccc12","ethyl benzoate","CCOC(=O)c1ccccc1",0,N/A
+50,C14H14SO,"dibenzylsulfoxide","O=[S](Cc1ccccc1)Cc2ccccc2","phenethyl phenyl sulfoxide","O=[S](CCc1ccccc1)c2ccccc2",0,N/A
+51,C9H10O2,"epoxyphenoxypropane","CC1OC1Oc2ccccc2","ethyl benzoate","CCOC(=O)c1ccccc1",0,N/A
+53,C9H10O2,"methyl o-methylbenzoate","COC(=O)c1ccccc1C","methyl 4-methylbenzoate","COC(=O)c1ccc(C)cc1",0,N/A
+54,C9H10O2,"methyl phenylacetate","COC(=O)Cc1ccccc1","methyl benzoate","COC(=O)c1ccccc1",0,N/A
+55,C9H10O2,"O-Tolyl acetate","CC(=O)Oc1ccccc1C","ethyl benzoate","CCOC(=O)c1ccccc1",0,N/A
+57,C10H16,"pentamethylcyclopentadiene","CC1C(=C(C)C(=C1C)C)C","camphene","CC1(C)C2CCC(C2)C1=C",0,N/A
+79,C9H11NO2,"phenylalanine","N[C@@H](Cc1ccccc1)C(O)=O","methyl 3-(methylamino)benzoate","CNc1cccc(c1)C(=O)OC",0,N/A
+85,C8H9NO2,"paracetamol","CC(=O)Nc1ccc(O)cc1","acetanilide","CC(=O)Nc1ccccc1",0,N/A
+91,C6H13ClO2,"2-chloro-1,1-diethoxyethane","CCOC(CCl)OCC","ethyl 4-chlorobutanoate","CCOC(=O)CCCCl",0,N/A
+94,C4H6O2S,"divinyl sulfone","C=C[S](=O)(=O)C=C","2,5-dihydrothiophene 1,1-dioxide","O=[S]1(=O)CC=CC1",0,N/A
+97,C6H8O,"cyclohex-2-en-1-one","O=C1CCCC=C1","3-methyl-2-cyclopenten-1-one","CC1=CC(=O)CC1",0,N/A
+100,C9H10O,"(e)-3-phenylprop-2-en-1-ol","OC/C=C/c1ccccc1","phenylacetaldehyde","O=CCc1ccccc1",0,N/A
+102,C13H10,"9h-fluorene","C1c2ccccc2c3ccccc13","fluorene","C1c2ccccc2c3ccccc13",1,N/A
+103,C7H8,"cyclohepta-1,3,5-triene","C1C=CC=CC=C1","toluene","Cc1ccccc1",0,N/A
+106,C6H12O3,"2,4,6-trimethyl-1,3,5-trioxane","CC1OC(C)OC(C)O1","tert-butyl methyl carbonate","COC(=O)OC(C)(C)C",0,N/A
+107,C7H10O3,"4,4-dimethyldihydro-2h-pyran-2,6(3h)-dione","CC1(C)CC(=O)OC(=O)C1","2,2-dimethyl-1,3-dioxolane-4-methanol","CC1(C)OCC(CO)O1",0,N/A
+108,C6H8N2O2S,"4-aminobenzenesulfonamide","Nc1ccc(cc1)[S](N)(=O)=O","thiazole-4,5-dicarboxamide","NC(=O)c1scnc1C(N)=O",0,N/A
+109,C10H10O,"3,4-dihydronaphthalen-2(1h)-one","O=C1CCc2ccccc2C1","1-phenylethanol","CC(O)c1ccccc1",0,N/A
+114,C9H8O,"2,3-dihydro-1h-inden-1-one","O=C1CCc2ccccc12","phenyl vinyl ketone","C=CC(=O)c1ccccc1",0,N/A
+117,C13H9N,"acridine","c1ccc2nc3ccccc3cc2c1","quinoline","c1ccc2ncccc2c1",0,N/A

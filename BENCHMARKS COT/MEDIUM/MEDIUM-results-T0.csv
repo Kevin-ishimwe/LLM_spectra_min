@@ -1,0 +1,39 @@
+Id,Formula,TrueName,SMILE-correct,Prediction,SMILE-LLM,Verdict,Isomers
+4,C9H10O,"propiophenone","CCC(=O)c1ccccc1","4-ethylphenol","CCc1ccc(O)cc1",0,N/A
+7,C12H8Br2,"1,4-dibromobiphenyl","BrC1=CCC(Br)(C=C1)c2ccccc2","1,4-dibromonaphthalene","Brc1ccc(Br)c2ccccc12",0,N/A
+10,C10H14,"1,2,4,5-tetramethylbenzene","Cc1cc(C)c(C)cc1C","1,3-diisopropylbenzene","CC(C)c1cccc(c1)C(C)C",0,N/A
+15,C14H15N,"dibenzylamine","C(NCc1ccccc1)c2ccccc2","n-methylbenzhydrylamine","CNC(c1ccccc1)c2ccccc2",0,N/A
+17,C9H12O3,"1,3,5-trimethoxybenzene","COc1cc(OC)cc(OC)c1","methyl 4-methoxybenzoate","COC(=O)c1ccc(OC)cc1",0,N/A
+20,C6H10O3,"propionic anhydride","CCC(=O)OC(=O)CC","ethyl acetoacetate","CCOC(=O)CC(C)=O",0,N/A
+21,C6H10O4,"diethyloxalate","CCOC(=O)C(=O)OCC","ethyl acetoacetate","CCOC(=O)CC(C)=O",0,N/A
+23,C9H10O2,"2-phenylpropionic acid","CC(C(O)=O)c1ccccc1","ethyl benzoate","CCOC(=O)c1ccccc1",0,N/A
+26,C9H10O2,"benzyl acetate","CC(=O)OCc1ccccc1","ethyl benzoate","CCOC(=O)c1ccccc1",0,N/A
+27,C9H10O2,"benzyloxyacetaldehyde","O=CCOCc1ccccc1","methyl 3-phenylpropanoate","COC(=O)CCc1ccccc1",0,N/A
+28,C9H10O2,"ethyl benzoate","CCOC(=O)c1ccccc1","ethyl benzoate","CCOC(=O)c1ccccc1",1,N/A
+29,C9H10O2,"phenoxy-2-propanone","CC(=O)COc1ccccc1","methyl phenylacetate","COC(=O)Cc1ccccc1",0,N/A
+30,C9H10O2,"methyl p-toluate","COC(=O)c1ccc(C)cc1","methyl 4-methylbenzoate","COC(=O)c1ccc(C)cc1",1,N/A
+31,C9H10O2,"p-tolyl acetate","CC(=O)Oc1ccc(C)cc1","methyl 4-methylbenzoate","COC(=O)c1ccc(C)cc1",0,N/A
+33,C5H16N2,"tetramethylenediamine","CN(C)CCN(C)C","pentamethylethylenediamine","CC(CN(C)C)N(C)C",0,N/A
+36,C5H10O,"2-methylbut-3-en-2-ol","CC(C)(O)C=C","2-methyl-2-buten-1-ol","CC=C(C)CO",0,N/A
+37,C8H7N,"benzyl cyanide","N#CCc1ccccc1","phenethylamine","NCCc1ccccc1",0,N/A
+39,C7H1O4,"3,3-dimethylglutaric acid","CC(C)(CC(O)=O)CC(O)=O","dimethyl oxalate","COC(=O)C(=O)OC",0,N/A
+46,C9H10O2,"4-methoxyacetophenone","COc1ccc(cc1)C(C)=O","4-methoxyacetophenone","COc1ccc(cc1)C(C)=O",1,N/A
+58,C3H4Cl4,"2,3-dichloropropene","ClCC(Cl)=C","1,1,2,3-tetrachloropropane","ClCC(Cl)C(Cl)Cl",0,N/A
+61,C9H10O,"2-phenylpropionaldehyde","CC(C=O)c1ccccc1","4-ethylbenzaldehyde","CCc1ccc(C=O)cc1",0,N/A
+65,C7H5NO3,"p-nitrobenzaldehyde","[O-][N+](=O)c1ccc(C=O)cc1","3-nitrobenzoic acid","OC(=O)c1cccc(c1)[N+]([O-])=O",0,N/A
+70,C6H8O7,"citric acid","OC(=O)CC(O)(CC(O)=O)C(O)=O","citric acid","OC(=O)CC(O)(CC(O)=O)C(O)=O",1,N/A
+75,C3H7NO,"dimethylformamide","CN(C)C=O","n,n-dimethylformamide","CN(C)C=O",1,N/A
+80,C6H11O2Cl,"4-chlorobutyl acetate","CC(=O)OCCCCCl","4-chlorobutyl acetate","CC(=O)OCCCCCl",1,N/A
+83,C9H11NO2,"ethyl 4-aminobenzoate","CCOC(=O)c1ccc(N)cc1","ethyl 4-aminobenzoate","CCOC(=O)c1ccc(N)cc1",1,N/A
+84,C10H10O4,"dimethyl phthalate","COC(=O)c1ccccc1C(=O)OC","dimethyl terephthalate","COC(=O)c1ccc(cc1)C(=O)OC",0,N/A
+87,C7H14,"methylcyclohexane","CC1CCCCC1","methylcyclohexane","CC1CCCCC1",1,N/A
+92,C8H14,"2,5-dimethylhexa-2,4-diene","CC(C)=CC=C(C)C","2,3-dimethyl-1,3-butadiene","CC(=C)C(C)=C",0,N/A
+95,C10H14O2,"3-(benzyloxy)propan-1-ol","OCCCOCc1ccccc1","phenethyl acetate","CC(=O)OCCc1ccccc1",0,N/A
+101,C14H22O,"3,5-di-tert-butylphenol","CC(C)(C)c1cc(O)cc(c1)C(C)(C)C","2,6-di-tert-butylphenol","CC(C)(C)c1cccc(c1O)C(C)(C)C",0,N/A
+110,C7H16O4,"1,1,3,3-tetramethoxypropane","COC(CC(OC)OC)OC","2,5,8,11-tetramethyldodecane-1,12-tetraol","None",0,N/A
+111,C3H8O3,"propane-1,2,3-triol","OCC(O)CO","glycerol","OCC(O)CO",1,N/A
+116,C20H18O3,"4,4',4''-(ethane-1,1,1-triyl)triphenol","CC(c1ccc(O)cc1)(c2ccc(O)cc2)c3ccc(O)cc3","dimethoxybenzophenone","COc1cccc(C(=O)c2ccccc2)c1OC",0,N/A
+119,C10H8N2,"4,4'-bipyridine","c1cc(ccn1)c2ccncc2","4,4'-bipyridine","c1cc(ccn1)c2ccncc2",1,N/A
+121,C6H6N2O,"isonicotinamide","NC(=O)c1ccncc1","isonicotinamide","NC(=O)c1ccncc1",1,N/A
+123,C6H8O4,"(E)-4-ethoxy-4-oxobut-2-enoic acid","CCOC(=O)\C=C\C(O)=O","diethyl maleate","CCOC(=O)\C=C/C(=O)OCC",0,N/A
+125,C4H6O4S,"2,2'-thiodiacetic acid","OC(=O)CSCC(O)=O","diethyl sulfate","CCO[S](=O)(=O)OCC",0,N/A
