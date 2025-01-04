@@ -1,0 +1,9 @@
+venv
+.env
+/NMR_Set/test/*.csv
+/NMR Datasets
+BENCHMARK
+BENCHMARKS
+__pycache__
+NMR Datasets ID SHIFT
+H1 NMR Datasets
