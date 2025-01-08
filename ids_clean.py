@@ -27,17 +27,17 @@ def generate_new_ids(task_file,id_file,path_json,path_csv):
                 csv_file.write(csv_string)
             except Exception as e:
                 print("file write failed: ",str(e))
-    json_file.write(json.dumps(json_task,indent=4))
+    json_file.write(json.dumps(json_task,indent=2))
     print('DONE GENRATING NEW ID DATASETS')
 
        
 def shiftid_function(id):
     return random.randint(0, 118)+id
-
-if(__name__=="__main__"):
+# so we dont accidental generate new ids
+if(__name__=="____"):
     NEW_PATH="./NMR Datasets ID SHIFT/"
-    IDS_ROOT="./NMR Datasets/IDS/"
-    CHALLENGE_ROOT="./NMR Datasets/CHALLENGES/"
+    IDS_ROOT="./H1 NMR Datasets/IDS/"
+    CHALLENGE_ROOT="./H1 NMR Datasets/CHALLENGES/"
 
     TASK_FILES=[
         "nmr_spectra_easy.json",  
@@ -55,9 +55,6 @@ if(__name__=="__main__"):
 
     # Recreate the NEW_PATH folder.
     os.makedirs(NEW_PATH)
-
-
-
 
     for i,TASK_FILE in enumerate(TASK_FILES):
         

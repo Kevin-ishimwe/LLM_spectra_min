@@ -1,6 +1,6 @@
 
 import os
-from prompts import system_prompt,user_prompt_COT,consistency_reprompt,regeneration_prompt
+from prompts import system_prompt,base_prompt,base_COT,logic_tips_COT,expert_tips_COT
 from extractor import json_extractor,csv_extractor
 from llms import call_openAI,call_gemini
 from tanimoto_similarity import calculate_tanimoto
@@ -47,11 +47,11 @@ def cross_check(references,challenge,prediction,outfile,scratchpad):
                 return False        
 
 
-def run_batch(temperature=0.8,id_file="N/A",challenge_file="N/A",outputfile="N/A",reprompt=False):
+def run_batch(temperature=0.8,id_file="N/A",challenge_file="N/A",outputfile="N/A",reprompt=False,model="gpt-4o1"):
     correct_reference=csv_extractor(id_file)
     molecules= json_extractor(challenge_file)
     for index,molecule in enumerate (molecules):
-        response,model_prediction=run_single(temperature,molecule, reprompt=reprompt)
+        response,model_prediction=run_single(temperature,molecule, reprompt=reprompt,model=model)
         scratch_pad=response.split("### Start answer ###")[0].replace("\n"," ")
         cross_check(references=correct_reference,
                     challenge=molecule,
@@ -62,15 +62,15 @@ def run_batch(temperature=0.8,id_file="N/A",challenge_file="N/A",outputfile="N/A
                     )
 
 
-def run_single(temperature,molecule, reprompt=False): 
+def run_single(temperature,molecule, model,reprompt=False,): 
     conversation=[]
     conversation.append
     ( {
         "role": "system", 
         "content":system_prompt
         })
-    prompt=f"""{user_prompt_COT(molecule)}"""
-    response,model_prediction=call_gemini(conversation=conversation,prompt=prompt,temperature=temperature)
+    prompt=f"""{base_prompt(molecule)}"""
+    response,model_prediction=call_openAI(conversation=conversation,prompt=prompt,temperature=temperature,model=model)
 
     if (not reprompt):
         return response,model_prediction
@@ -86,12 +86,14 @@ def run_single(temperature,molecule, reprompt=False):
 
 if (__name__=="__main__"):
  try:
-    MODEL = "gpt-4o1"
+    MODEL = "o1-preview"
     TEMPERATURES=[0,0.5,0.8,1]
     REPROMPT=False
-    IDS_ROOT="./NMR Datasets/IDS/"
-    CHALLENGE_ROOT="./NMR Datasets/CHALLENGES/"
-    BENCHMARKS_ROOT = "./BENCHMARKS/GEMINI/COT/"
+    #paths 
+    IDS_ROOT="./H1 NMR Datasets/IDS/"
+    CHALLENGE_ROOT="./H1 NMR Datasets/CHALLENGES/"
+    BENCHMARKS_ROOT = "./BENCHMARK/GPT/COT/"
+    # pay attention to correct paths
 
     CHALLENGE_FILES=[
         f"{CHALLENGE_ROOT}nmr_spectra_easy.json",  
@@ -119,6 +121,7 @@ if (__name__=="__main__"):
                     id_file=CHALLENGE_IDS[index],
                     challenge_file=CHALLENGE_FILES[index],
                     outputfile=OUTPUTFILES[index],
+                    model=MODEL,
                     reprompt=REPROMPT
                 )
 

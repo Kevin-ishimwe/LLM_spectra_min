@@ -33,6 +33,7 @@ genai.configure(api_key=GEMINI_KEY)
 
 #use openai gtp4o for inference 
 def call_openAI(conversation,prompt, model = "gpt-4o",temperature=1):
+  print(model)
   conversation.append( {"role": "user", "content":prompt })
   completion = client.chat.completions.create(
   temperature=temperature,

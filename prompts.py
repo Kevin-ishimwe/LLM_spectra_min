@@ -7,8 +7,10 @@ def base_prompt(NMR_data,formula=None):
             {NMR_data}
             What's the molecule's name?
             {"" if formula is None else "Be mindful of stoichiometry and ensure consistency with the given formula." }
-            Format the final answer like this -
-            Start answer ### <prediction> ### End answer
+            Format the final answer like this - 
+            ### Scratchpad ### <scratchpad> ### Scratchpad ###
+            ### Start answer ### <prediction> ### End answer ###
+            The prediction should only contain the name of the molecule and no other text
         """
 
 # 2.chain of thought prompt 
@@ -40,6 +42,10 @@ def logic_tips_COT(NMR_data,formula=None):
             Be mindful of connectivity and ensure consistency with all hypothesized fragments
             {"" if formula is None else "Be mindful of stoichiometry and ensure consistency with the given formula." }
             Continue using the scratchpad until you're confident about the answer.
+            Format the final answer like this - 
+            ### Scratchpad ### <scratchpad> ### Scratchpad ###
+            ### Start answer ### <prediction> ### End answer ###
+            The prediction should only contain the name of the molecule and no other text
             
         """
 
@@ -63,9 +69,9 @@ def expert_tips_COT(NMR_data,formula=None):
             The splitting of signals caused by J-coupling reveals the number of (mostly) hydrogen atoms in neighboring positions. One neighboring hydrogen splits the signal into two lines (doublet) with 1:1 ratio of signal intensities, two neighboring hydrogens split the signal into three lines (triplet) with 1:2:1 intensity ratio, three neighboring hydrogens split the signal into four lines (quartet) with 1:3:3:1 intensity ratio. For example, the signal of the methyl group in an ethoxy fragment (CH3–CH2–O) is split into a triplet by the neighboring two hydrogen atoms in the CH2 group. Similarly, the signal of the CH2 group is split into a quartet by the neighboring three hydrogen atoms in the methyl group.
             
             {"" if formula is None else "Be mindful of stoichiometry and ensure consistency with the given formula." }  
-            Format the final answer like this -
-            Scratchpad ### <scratchpad> ### Scratchpad
-            Start answer ### <prediction> ### End answer
+            Format the final answer like this - 
+            ### Scratchpad ### <scratchpad> ### Scratchpad ###
+            ### Start answer ### <prediction> ### End answer ###
             The prediction should only contain the name of the molecule and no other text
 
     """
@@ -95,10 +101,10 @@ def expert_logics_tips_COT(NMR_data,formula=None):
             Be mindful of connectivity and ensure consistency with all hypothesized fragments. 
             {"" if formula is None else "Be mindful of stoichiometry and ensure consistency with the given formula." }
 
-            Format the final answer like this -
-            Scratchpad ### <scratchpad> ### Scratchpad
-            Start answer ### <prediction> ### End answer
-            The prediction should only contain the name of the molecule and no other text 
+            Format the final answer like this - 
+            ### Scratchpad ### <scratchpad> ### Scratchpad ###
+            ### Start answer ### <prediction> ### End answer ###
+            The prediction should only contain the name of the molecule and no other text
     """
 
 
