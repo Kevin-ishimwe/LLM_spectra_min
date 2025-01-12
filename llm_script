@@ -231,7 +231,7 @@ PROMPT_TYPES = {
 }
 
 # Set paths
-DATA_DIR = Path("./NMR_Set")
+DATA_DIR = Path("./NMR_Set") #replace with your actual folder path with files
 BENCHMARK_BASE = Path("./BENCHMARK_LLM")
 BENCHMARKS_DIR = BENCHMARK_BASE / "GPT" / "RESULTS"
 
