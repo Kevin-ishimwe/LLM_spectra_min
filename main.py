@@ -84,6 +84,10 @@ def run_single(temperature,molecule, model,reprompt=False,):
         response,model_prediction=call_openAI(conversation=conversation,prompt=regeneration_prompt(),temperature=temperature)
     return response,model_prediction
 
+
+
+
+
 if (__name__=="__main__"):
  try:
     MODEL = "o1-preview"
@@ -105,7 +109,7 @@ if (__name__=="__main__"):
         f"{IDS_ROOT}nmr_challenge_med_ids.csv",
         f"{IDS_ROOT}nmr_challenge_har_ids.csv",
     ]
-
+    
     #run entire benchmark
     for temp in TEMPERATURES:
         OUTPUTFILES=[
