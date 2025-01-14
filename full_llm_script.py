@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import json
 import logging
 import pandas as pd
@@ -12,6 +6,7 @@ import os
 import time
 from tqdm import tqdm 
 from openai import OpenAI
+import zipfile
 
 # Configure logging
 logging.basicConfig(
@@ -19,125 +14,23 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - [EXTRACTOR] %(message)s'
 )
 
-# System prompt
-SYSTEM_PROMPT = """You are an expert in NMR spectroscopy analysis and organic chemistry."""
 
-def json_extractor(filename):
-    """Extract and validate NMR data from JSON file"""
-    try:
-        logging.info(f"Reading file: {filename}")
-        with open(filename, "r") as file:
-            json_data = json.load(file)
-            
-        # Validate data structure
-        if not isinstance(json_data, list):
-            logging.error("JSON data is not a list of molecules")
-            return []
-            
-        # Validate each molecule
-        valid_molecules = []
-        for mol in json_data:
-            if validate_molecule_data(mol):
-                valid_molecules.append(mol)
-            else:
-                logging.warning(f"Invalid molecule data found: {mol.get('nmr_challenge_id', 'unknown ID')}")
-                
-        logging.info(f"Successfully extracted {len(valid_molecules)} valid molecules")
-        return valid_molecules
-        
-    except Exception as e:
-        logging.error(f"Error extracting JSON data: {str(e)}")
-        return []
-
-def validate_molecule_data(molecule):
-    """Validate molecule data structure"""
-    required_fields = ['formula', 'nmr_challenge_id', 'peaks']
-    return all(field in molecule for field in required_fields) and            isinstance(molecule['peaks'], list) and            all(validate_peak_data(peak) for peak in molecule['peaks'])
-
-def validate_peak_data(peak):
-    """Validate peak data structure"""
-    required_peak_fields = [
-        'name', 'shift', 'range', 'hydrogens',
-        'integral', 'class', 'j_values'
-    ]
-    return all(field in peak for field in required_peak_fields)
-
-def token_formater(data, include_formula=True):
-    """Format NMR data for model input"""
-    try:
-        peaks = []
-        for peak in data["peaks"]:
-            peak_str = "--------\n"
-            peak_str += f"Name: {peak['name']}\n"
-            peak_str += f"Shift: {peak['shift']}\n"
-            peak_str += f"Range: {' '.join(str(value) for value in peak['range'])}\n"
-            if include_formula:  # Only include hydrogens if formula is included
-                peak_str += f"Hydrogens: {peak['hydrogens']}\n"
-            peak_str += f"Integral: {peak['integral']}\n"
-            peak_str += f"Class: {peak['class']}\n"
-            peak_str += f"J values: {' '.join(str(value) for value in peak['j_values'])}\n"
-            
-            if 'method' in peak:
-                peak_str += f"Method: {peak['method']}\n"
-                
-            peaks.append(peak_str)
-        
-        if include_formula:
-            formatted_data = f"\nFormula: {data.get('formula', 'N/A')}\nPeaks:\n{''.join(peaks)}"
-        else:
-            formatted_data = f"\nPeaks:\n{''.join(peaks)}"
-        return formatted_data
-    
-
-def call_openai(prompt, model="gpt-4-turbo-2024-04-09", temperature=1):
-    """Make calls to OpenAI API with error handling"""
-    client = OpenAI()  # Will use OPENAI_API_KEY environment variable
-    
-    try:
-        messages = [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": prompt}
-        ]
-        
-        completion = client.chat.completions.create(
-            model=model,
-            messages=messages,
-            temperature=temperature
-        )
-        
-        txt = completion.choices[0].message.content
-        
-        # Parse response
-        try:
-            scratchpad = txt.split("### Scratchpad ###")[1].split("### Scratchpad ###")[0].strip()
-            answer = txt.split("### Start answer ###")[1].split("### End answer ###")[0].strip().lower()
-        except IndexError:
-            logging.error("Response format incorrect")
-            scratchpad = txt
-            answer = txt.lower()
-            
-        time.sleep(1)  # Rate limiting
-        return scratchpad, answer
-        
-    except Exception as e:
-        logging.error(f"OpenAI API Error: {str(e)}")
-        raise
-
+# ------------------------------------------------------------------ #
+# ------------------------------------------------------------------ #
+# Prompts
+#Zero-shot prompt
 def base_prompt(nmr_data, formula=None):
-    """Zero-shot prompt"""
     return f"""
             Here is 1H NMR spectrum data for a certain molecule {":" if formula is None else f"with chemical formula {formula}:"}
             {nmr_data}
             What's the molecule's name?
             {"" if formula is None else "Be mindful of stoichiometry and ensure consistency with the given formula." }
             Format the final answer like this - 
-            ### Scratchpad ### <scratchpad> ### Scratchpad ###
             ### Start answer ### <prediction> ### End answer ###
             The prediction should only contain the name of the molecule and no other text
         """
-
+# Chain of thought prompt
 def cot_prompt(nmr_data, formula=None):
-    """Chain of thought prompt"""
     return f"""
             Here is 1H NMR spectrum data for a certain molecule {":" if formula is None else f"with chemical formula {formula}:"}
             {nmr_data}
@@ -151,9 +44,8 @@ def cot_prompt(nmr_data, formula=None):
             ### Start answer ### <prediction> ### End answer ###
             The prediction should only contain the name of the molecule and no other text
         """
-
+# Chain of thought prompt with logic tips
 def logic_tips_prompt(nmr_data, formula=None):
-    """Chain of thought prompt with logic tips"""
     return f"""
            Here is 1H NMR spectrum data for a certain molecule {":" if formula is None else f"with chemical formula {formula}:"}
             {nmr_data}
@@ -170,9 +62,8 @@ def logic_tips_prompt(nmr_data, formula=None):
             ### Start answer ### <prediction> ### End answer ###
             The prediction should only contain the name of the molecule and no other text
         """
-
+# Chain of thought prompt with expert tips
 def expert_tips_prompt(nmr_data, formula=None):
-    """Chain of thought prompt with expert tips"""
     return f"""
             Here is 1H NMR spectrum data for a certain molecule {":" if formula is None else f"with chemical formula {formula}:"}
             {nmr_data} 
@@ -191,10 +82,10 @@ def expert_tips_prompt(nmr_data, formula=None):
             ### Scratchpad ### <scratchpad> ### Scratchpad ###
             ### Start answer ### <prediction> ### End answer ###
             The prediction should only contain the name of the molecule and no other text
-    """
+        """
 
+# Chain of thought prompt with both expert and logic tips
 def expert_logic_tips_prompt(nmr_data, formula=None):
-    """Chain of thought prompt with both expert and logic tips"""
     return f"""
             Here is 1H NMR spectrum data for a certain molecule {":" if formula is None else f"with chemical formula {formula}:"}
             {nmr_data} 
@@ -224,7 +115,51 @@ def expert_logic_tips_prompt(nmr_data, formula=None):
             ### Scratchpad ### <scratchpad> ### Scratchpad ###
             ### Start answer ### <prediction> ### End answer ###
             The prediction should only contain the name of the molecule and no other text
-    """
+        """
+
+# ------------------------------------------------------------------ #
+# ------------------------------------------------------------------ #
+
+# System prompt for all conversations
+SYSTEM_PROMPT = """You are an expert in NMR spectroscopy analysis and organic chemistry."""
+# Config 
+MODEL="gpt-4-turbo-2024-04-09"
+os.environ['OPENAI_API_KEY'] = "your_own_api_key"  # Replace with your actual API key
+
+# zip file handling
+def setup_files():
+    """Extract zip file if needed and ensure files are accessible"""
+    zip_name = "H1 NMR SPECTRA TASKS OAI TEAM_N.zip"
+    extract_dir = "H1 NMR SPECTRA TASKS OAI TEAM_N"
+    
+    # Clean up any existing extracted files
+    if os.path.exists(extract_dir):
+        print("Removing existing extracted files...")
+        for root, dirs, files in os.walk(extract_dir, topdown=False):
+            for name in files:
+                os.remove(os.path.join(root, name))
+            for name in dirs:
+                os.rmdir(os.path.join(root, name))
+        os.rmdir(extract_dir)
+    
+    # Extract fresh copy
+    print(f"Extracting {zip_name}...")
+    with zipfile.ZipFile(zip_name, 'r') as zip_ref:
+        zip_ref.extractall(extract_dir)
+    print("Files extracted successfully")
+
+# Then modify your paths section to:
+setup_files()  # Call this before defining paths
+
+DATA_DIR = Path("H1 NMR SPECTRA TASKS OAI TEAM_N/normalized_files")
+BENCHMARK_BASE = Path("./BENCHMARK")
+BENCHMARKS_DIR = BENCHMARK_BASE / "GPT" / "RESULTS"
+
+CHALLENGE_FILES = [
+    DATA_DIR / "NNMR_spectra_EASY.json",
+    DATA_DIR / "NNMR_spectra_MEDIUM.json",
+    DATA_DIR / "NNMR_spectra_HARD.json"
+]
 
 PROMPT_TYPES = {
     "base": base_prompt,
@@ -233,124 +168,283 @@ PROMPT_TYPES = {
     "expert": expert_tips_prompt,
     "expert_logic": expert_logic_tips_prompt
 }
+TEMPERATURE=[0, 0.5,0.8, 1.0]
+# ------------------------------------------------------------------ #
+# ------------------------------------------------------------------ #
 
-# Set paths
-DATA_DIR = Path("./NMR_Set")
-BENCHMARK_BASE = Path("./BENCHMARK_LLM")
-BENCHMARKS_DIR = BENCHMARK_BASE / "GPT" / "RESULTS"
 
-CHALLENGE_FILES = [
-    DATA_DIR / "NMR spectra_EASY(1).json",
-    DATA_DIR / "nmr_spectra_medium.json",
-    DATA_DIR / "nmr_spectra_hard.json"
-]
 
+# Extract and validate NMR data from JSON file
+def json_extractor(filename):
+    try:
+        with open(filename, "r") as file:
+            json_data = json.load(file)
+            
+        # Validate data structure
+        if not isinstance(json_data, list):
+            logging.error("JSON data is not a list of molecules")
+            return []
+            
+        # Validate each molecule
+        valid_molecules = []
+        for mol in json_data:
+            if validate_molecule_data(mol):
+                valid_molecules.append(mol)
+            else:
+                logging.warning(f"Invalid molecule data found: {mol.get('nmr_challenge_id', 'unknown ID')}")
+                
+        logging.info(f"Successfully extracted {len(valid_molecules)} valid molecules")
+        return valid_molecules
+        
+    except Exception as e:
+        logging.error(f"Error extracting JSON data: {str(e)}")
+        return []
+
+# Validate molecule data structure
+def validate_molecule_data(molecule):
+    required_fields = ['formula', 'nmr_challenge_id', 'peaks']
+    return all(field in molecule for field in required_fields) and isinstance(molecule['peaks'], list) and all(validate_peak_data(peak) for peak in molecule['peaks'])
+
+# Validate peak data structure
+def validate_peak_data(peak):
+    required_peak_fields = [
+        'name', 'shift', 'range', 'hydrogens',
+        'integral', 'class', 'j_values'
+    ]
+    return all(field in peak for field in required_peak_fields)
+
+# Format NMR data for model input
+def token_formater(data, include_formula=True):
+    try:
+        peaks = []
+        for peak in data["peaks"]:
+            peak_str = "--------\n"
+            peak_str += f"Name: {peak['name']}\n"
+            peak_str += f"Shift: {peak['shift']}\n"
+            peak_str += f"Range: {' '.join(str(value) for value in peak['range'])}\n"
+            if include_formula:  # Only include hydrogens if formula is included
+                peak_str += f"Hydrogens: {peak['hydrogens']}\n"
+            peak_str += f"Integral: {peak['integral']}\n"
+            peak_str += f"Class: {peak['class']}\n"
+            peak_str += f"J values: {' '.join(str(value) for value in peak['j_values'])}\n"
+            
+            if 'method' in peak:
+                peak_str += f"Method: {peak['method']}\n"
+                
+            peaks.append(peak_str)
+        
+        if include_formula:
+            formatted_data = f"\nFormula: {data.get('formula', 'N/A')}\nPeaks:\n{''.join(peaks)}"
+        else:
+            formatted_data = f"\nPeaks:\n{''.join(peaks)}"
+
+        return formatted_data
+        
+    except Exception as e:
+        logging.error(f"Error formatting data: {str(e)}")
+        return ""
+
+def call_openai(prompt, model=MODEL, temperature=1):
+    try:
+        client = OpenAI()
+        messages = [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": prompt}
+        ]
+        
+        completion = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            temperature=temperature
+        )
+        return completion.choices[0].message.content.replace("\n","")
+        
+    except Exception as e:
+        logging.error(f"OpenAI API Error: {str(e)}")
+        raise
+
+# Generate output file path based on parameters
 def get_output_path(difficulty, model, prompt_type, temperature, with_formula=True):
-    """Generate output file path based on parameters"""
     form_type = "WITH_FORMULA" if with_formula else "NO_FORMULA"
-    base_path = BENCHMARKS_DIR / difficulty / form_type
-    base_path.mkdir(parents=True, exist_ok=True)
+    base_path = BENCHMARKS_DIR / MODEL / difficulty / form_type
     filename = f"{difficulty}-results-T{temperature}-{prompt_type}-{model}.csv"
     return base_path / filename
 
-def run_analysis(difficulty, prompt_type, temperature=0, include_formula=True):
-    """Run analysis for a specific configuration"""
-    # Get corresponding challenge file
-    file_idx = {"EASY": 0, "MEDIUM": 1, "HARD": 2}[difficulty]
-    challenge_file = CHALLENGE_FILES[file_idx]
-    
-    # Get output path
-    output_file = get_output_path(
-        difficulty=difficulty,
-        model="gpt_4_turbo_2024_04_09",
-        prompt_type=prompt_type,
-        temperature=temperature,
-        with_formula=include_formula
-    )
-    
-    # Load molecules
+# Create benchmark directories if they don't exist
+def ensure_benchmark_dirs():
+    for difficulty in ["EASY", "MEDIUM", "HARD"]:
+        for form_type in ["WITH_FORMULA", "NO_FORMULA"]:
+            path = BENCHMARKS_DIR/ MODEL / difficulty / form_type
+            path.mkdir(parents=True, exist_ok=True)
+
+
+# Run batch processing of NMR spectra analysis
+def run_batch(temperature, challenge_file, outputfile, prompt_type, include_formula=True, model=MODEL):
     molecules = json_extractor(challenge_file)
     results = []
     
-    for molecule in tqdm(molecules, desc=f"Processing {difficulty} dataset with {prompt_type} prompt"):
+    for molecule in tqdm(molecules, desc=f"Processing {challenge_file.stem}"):
         try:
-            # Format NMR data
-            nmr_data = token_formater(molecule)
-            
+            # Format NMR data with include_formula parameter
+            nmr_data = token_formater(molecule, include_formula=include_formula)
             # Prepare prompt
             prompt_func = PROMPT_TYPES[prompt_type]
             formula = molecule.get('formula') if include_formula else None
             prompt = prompt_func(nmr_data, formula)
             
             # Make API call
-            scratchpad, prediction = call_openai(prompt, temperature=temperature)
+            prediction = call_openai(prompt, model=model, temperature=temperature)
             
             results.append({
                 "Id": molecule['nmr_challenge_id'],
                 "Formula": molecule.get('formula', 'N/A'),
-                "Prediction": prediction,
-                "ScratchPad": scratchpad,
-                "PromptType": prompt_type
+                "PromptType": prompt_type,
+                "Prediction": f"{prediction}"
+ 
             })
             
         except Exception as e:
             logging.error(f"Error processing molecule {molecule.get('nmr_challenge_id')}: {str(e)}")
-            results.append({
-                "Id": molecule['nmr_challenge_id'],
-                "Formula": molecule.get('formula', 'N/A'),
-                "Prediction": "ERROR",
-                "ScratchPad": str(e),
-                "PromptType": prompt_type
-            })
+            raise
     
-    # Save results
+    # Save results to CSV
     df = pd.DataFrame(results)
-    df.to_csv(output_file, index=False)
-    logging.info(f"Results saved to {output_file}")
+    df.to_csv(outputfile, index=False)
+    logging.info(f"Results saved to {outputfile}")
     return results
 
+def test_loop_systems(
+    n_molecules,
+    difficulties,
+    temperatures,
+    prompt_types,
+    include_formula,
+    model=MODEL
+):
+    """Test all looping systems with specified parameters"""
+    
+    # Create directories
+    ensure_benchmark_dirs()
+    
+    # Calculate total API calls
+    total_molecules = 0
+    if n_molecules is None:
+        for difficulty in difficulties:
+            idx = 0 if difficulty == "EASY" else (1 if difficulty == "MEDIUM" else 2)
+            molecules = json_extractor(CHALLENGE_FILES[idx])
+            total_molecules += len(molecules)
+    else:
+        total_molecules = n_molecules * len(difficulties)
+    
+    total_calls = (
+        total_molecules * 
+        len(temperatures) * 
+        len(prompt_types) *
+        len(include_formula)
+    )
+    
+    print(f"\nTest Configuration:")
+    print(f"Number of molecules per file: {'All' if n_molecules is None else n_molecules}")
+    print(f"Difficulties: {difficulties}")
+    print(f"Temperatures: {temperatures}")
+    print(f"Prompt types: {prompt_types}")
+    print(f"Formula conditions: {['With Formula' if f else 'No Formula' for f in include_formula]}")
+    print(f"Total API calls needed: {total_calls}")
+    
+    # Ask for confirmation
+    print(f"\nThis will make {total_calls} API calls.\n\n\n")
+    results_summary = []
+    try:
+        for difficulty in difficulties:
+            # Get corresponding challenge file
+            if difficulty == "EASY":
+                challenge_file = CHALLENGE_FILES[0]
+            elif difficulty == "MEDIUM":
+                challenge_file = CHALLENGE_FILES[1]
+            else:
+                challenge_file = CHALLENGE_FILES[2]
+            
+            # Load molecules
+            all_molecules = json_extractor(challenge_file)
+            test_molecules = all_molecules[:n_molecules] if n_molecules else all_molecules
+            
+            # Save test molecules to temporary file
+            test_file = Path(f"./temp_{difficulty}_test.json")
+            with open(test_file, "w") as f:
+                json.dump(test_molecules, f)
+            
+            for formula in include_formula:
+                for temp in temperatures:
+                    for prompt_type in prompt_types:
+                        try:
+                            print(f"\nProcessing: {difficulty}, {'With' if formula else 'No'} Formula, T={temp}, Prompt={prompt_type}")
+                            
+                            # Get output path
+                            output_file = get_output_path(
+                                difficulty=difficulty,
+                                model=model.replace("-", "_"),
+                                prompt_type=prompt_type,
+                                temperature=temp,
+                                with_formula=formula
+                            )
+                            
+                            # Run batch
+                            results = run_batch(
+                                temperature=temp,
+                                challenge_file=test_file,
+                                outputfile=output_file,
+                                prompt_type=prompt_type,
+                                include_formula=formula,
+                                model=model
+                            )
+                            
+                            # Store summary
+                            results_summary.append({
+                                'difficulty': difficulty,
+                                'with_formula': formula,
+                                'temperature': temp,
+                                'prompt_type': prompt_type,
+                                'n_processed': len(results),
+                                'n_errors': sum(1 for r in results if r['Prediction'] == 'ERROR'),
+                                'output_file': str(output_file)
+                            })
+                            
+                        except Exception as e:
+                            logging.error(f"Error in combination - Difficulty: {difficulty}, "
+                                        f"Formula: {formula}, Temp: {temp}, Prompt: {prompt_type}")
+                            logging.error(str(e))
+            
+            # Clean up temporary file
+            test_file.unlink()
+    
+    except Exception as e:
+        logging.error(f"Test loop error: {str(e)}")
+        raise
+    
+    finally:
+        # Print summary
+        print("\n=== Test Summary ===")
+        for result in results_summary:
+            print(f"Formula: {'With' if result['with_formula'] else 'Without'}")
+            print(f"\nDifficulty: {result['difficulty']}")
+            print(f"Temperature: {result['temperature']}")
+            print(f"Prompt Type: {result['prompt_type']}")
+            print(f"Molecules Processed: {result['n_processed']}")
+            print(f"Errors: {result['n_errors']}")
+            print(f"Output File: {result['output_file']}")
+        
+        return results_summary
+
+
+# ------------------------------------------------------------------ #
 if __name__ == "__main__":
-     # Set OpenAI API key
-    os.environ['OPENAI_API_KEY'] = "your_own_api_key"
-    
-    difficulties = ["EASY", "MEDIUM", "HARD"]
-    prompt_types = ["base", "cot", "logic", "expert", "expert_logic"]
-    temperatures = [0, 0.5, 0.8, 1.0]
-    formula_conditions = [True, False]  # With and without formula
-    
-    # Calculate total runs
-    total_runs = len(difficulties) * len(prompt_types) * len(temperatures) * len(formula_conditions)
-    print(f"\nStarting full NMR analysis:")
-    print(f"Total configurations to run: {total_runs}")
-    
-    # Run all combinations
-    for difficulty in difficulties:
-        for prompt_type in prompt_types:
-            for temp in temperatures:
-                for include_formula in formula_conditions:
-                    print(f"\nRunning analysis:")
-                    print(f"Difficulty: {difficulty}")
-                    print(f"Prompt type: {prompt_type}")
-                    print(f"Temperature: {temp}")
-                    print(f"Formula included: {include_formula}")
-                    
-                    try:
-                        results = run_analysis(
-                            difficulty=difficulty,
-                            prompt_type=prompt_type,
-                            temperature=temp,
-                            include_formula=include_formula
-                        )
-                        print(f"Successfully processed {len(results)} molecules")
-                    except Exception as e:
-                        logging.error(f"Failed to complete run: {str(e)}")
-                        print(f"Error encountered, check logs for details")
-    
-    print("\nAnalysis complete! Results are saved in the BENCHMARK directory structure.")
-
-
-# In[ ]:
-
-
-
-
+    try:
+        test_loop_systems(
+        n_molecules=None,
+        difficulties=["EASY", "MEDIUM", "HARD"],
+        temperatures=TEMPERATURE,
+        prompt_types=["base", "cot", "logic", "expert", "expert_logic"],
+        include_formula=[True, False]
+    )
+    except Exception as e:
+        logging.error(f"error: {str(e)}")
