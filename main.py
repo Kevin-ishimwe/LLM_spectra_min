@@ -1,29 +1,16 @@
-
 import os
-from prompts import system_prompt,base_prompt,base_COT,logic_tips_COT,expert_tips_COT
-from extractor import json_extractor,csv_extractor
+from prompts import system_prompt, base_prompt, cot_prompt, logic_tips_prompt, expert_tips_prompt, expert_logic_tips_prompt
+from helper import json_extractor,csv_extractor,write_benchmark_result,get_output_path,token_formater
 from llms import call_openAI,call_gemini
 from tanimoto_similarity import calculate_tanimoto
 from crosscheck import cross_check_molecule,normalize_string
 from smile import generate_smiles_string
 import logging
-
+from pathlib import Path
+from llama import load_model,run_inference
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def write_benchmark_result(file,reference,prediction,verdict,smiles_llm,takimono,scratchpad):
-    csv_file=open(file,"a")
-    csv_file.write('\n'+f"{reference}"+','+f"\"{prediction}\""+","+f"\"{smiles_llm}\""+','+verdict+","+takimono+','+"N/A"+","+f"\"{scratchpad}\"")
-
-def prepare_output_file(path):
-    try:
-        if (os.path.exists(path)):
-            return
-        else :
-            csv_file=open(path,"a")
-            csv_file.write("Id,Formula,TrueName,SMILE-correct,Prediction,SMILE-LLM,Verdict,TanimotoCoefficient,Isomers,ScratchPad")
-    except Exception as e:
-        logging.error(str(e))
 
 
 # cross reference the prediction
@@ -47,11 +34,13 @@ def cross_check(references,challenge,prediction,outfile,scratchpad):
                 return False        
 
 
-def run_batch(temperature=0.8,id_file="N/A",challenge_file="N/A",outputfile="N/A",reprompt=False,model="gpt-4o1"):
+def run_batch(temperature,id_file,challenge_file,outputfile,model,tokenizer,prompt,self_aug,formula):
     correct_reference=csv_extractor(id_file)
     molecules= json_extractor(challenge_file)
     for index,molecule in enumerate (molecules):
-        response,model_prediction=run_single(temperature,molecule, reprompt=reprompt,model=model)
+        data=token_formater(molecule, formula)
+        formula = molecule.get('formula') if formula else None
+        response,model_prediction=run_single(temperature,prompt(data,formula), self_aug=self_aug,model=model,tokenizer=tokenizer)
         scratch_pad=response.split("### Start answer ###")[0].replace("\n"," ")
         cross_check(references=correct_reference,
                     challenge=molecule,
@@ -62,17 +51,10 @@ def run_batch(temperature=0.8,id_file="N/A",challenge_file="N/A",outputfile="N/A
                     )
 
 
-def run_single(temperature,molecule, model,reprompt=False,): 
-    conversation=[]
-    conversation.append
-    ( {
-        "role": "system", 
-        "content":system_prompt
-        })
-    prompt=f"""{base_prompt(molecule)}"""
-    response,model_prediction=call_openAI(conversation=conversation,prompt=prompt,temperature=temperature,model=model)
-
-    if (not reprompt):
+def run_single(temperature,prompt, model,self_aug=False): 
+    txt=run_inference(model=model,tokenizer=tokenizer,prompt=prompt,temperature=temperature)
+    
+    if (not self_aug):
         return response,model_prediction
 
     # self augmentation test
@@ -90,44 +72,60 @@ def run_single(temperature,molecule, model,reprompt=False,):
 
 if (__name__=="__main__"):
  try:
-    MODEL = "o1-preview"
-    TEMPERATURES=[0,0.5,0.8,1]
-    REPROMPT=False
+    MODEL = "Llama-3.3-70B-Instruct"
+    
     #paths 
     IDS_ROOT="./H1 NMR Datasets/IDS/"
-    CHALLENGE_ROOT="./H1 NMR Datasets/CHALLENGES/"
-    BENCHMARKS_ROOT = "./BENCHMARK/GPT/COT/"
+    CHALLENGE_ROOT="./H1 NMR Datasets/Challenges/"
+    BENCHMARKS_ROOT = Path("./BENCHMARK")
     # pay attention to correct paths
 
     CHALLENGE_FILES=[
-        f"{CHALLENGE_ROOT}nmr_spectra_easy.json",  
-        f"{CHALLENGE_ROOT}nmr_spectra_medium.json",
-        f"{CHALLENGE_ROOT}nmr_spectra_hard.json",
+        f"{CHALLENGE_ROOT}Hnmr_spectra_easy.json",  
+        f"{CHALLENGE_ROOT}Hnmr_spectra_medium.json",
+        f"{CHALLENGE_ROOT}Hnmr_spectra_hard.json",
         ]
     CHALLENGE_IDS = [
-        f"{IDS_ROOT}nmr_challenge_ids_easy.csv",
-        f"{IDS_ROOT}nmr_challenge_med_ids.csv",
-        f"{IDS_ROOT}nmr_challenge_har_ids.csv",
+        f"{IDS_ROOT}Hnmr_challenge_easy_ids.csv",
+        f"{IDS_ROOT}Hnmr_challenge_med_ids.csv",
+        f"{IDS_ROOT}Hnmr_challenge_har_ids.csv",
     ]
+    # model params 
+    TEMPERATURES=[0,0.5,0.8,1]
+    REPROMPT=False
     
-    #run entire benchmark
-    for temp in TEMPERATURES:
-        OUTPUTFILES=[
-            f"{BENCHMARKS_ROOT}EASY/EASY-results-T{temp}.csv",
-            f"{BENCHMARKS_ROOT}MEDIUM/MEDIUM-results-T{temp}.csv",
-            f"{BENCHMARKS_ROOT}HARD/HARD-results-T{temp}.csv"
-        ]
+    PROMPT_TYPES = {
+    "base": base_prompt,
+    "cot": cot_prompt,
+    "logic": logic_tips_prompt,
+    "expert": expert_tips_prompt,
+    "expert_logic": expert_logic_tips_prompt
+    }
+    FORMULA_OPTIONS=[True,False]
+    # load llama
 
-        for index,file in enumerate(CHALLENGE_FILES):
-            prepare_output_file(OUTPUTFILES[index])
-            run_batch(
-                    temperature=temp,
-                    id_file=CHALLENGE_IDS[index],
-                    challenge_file=CHALLENGE_FILES[index],
-                    outputfile=OUTPUTFILES[index],
-                    model=MODEL,
-                    reprompt=REPROMPT
-                )
+    model,tokenizer=load_model()
+
+
+    for ID,PROMPT in PROMPT_TYPES.items():
+    #run entire benchmark
+        for FORMULA in FORMULA_OPTIONS:
+            for TEMP in TEMPERATURES:
+                for index,file in enumerate(CHALLENGE_FILES):
+                    CATEGORY=(CHALLENGE_FILES[index].split("_")[2].split(".json")[0]).upper()
+                    OUTPUTFILE=get_output_path(BENCHMARKS_ROOT,CATEGORY, MODEL, ID, TEMP, FORMULA)
+
+                    run_batch(
+                            temperature=TEMP,
+                            id_file=CHALLENGE_IDS[index],
+                            challenge_file=CHALLENGE_FILES[index],
+                            outputfile=OUTPUTFILE,
+                            model=model,
+                            tokenizer=tokenizer,
+                            prompt=PROMPT,
+                            self_aug=REPROMPT,
+                            formula=FORMULA
+                        )
 
  except Exception as e:
         print("[ERROR]\n",str(e))

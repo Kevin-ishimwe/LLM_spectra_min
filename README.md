@@ -1,50 +1,96 @@
-# LLMSpectroscopy
+# NMR Analysis Script
 
-Automated spectroscopy analysis for the 2024 LLM Hackathon for Applications in Materials and Chemistry
+This script automates the analysis of ¹H NMR spectra using OpenAI's API. It processes NMR data provided in a structured format, applies different prompts for molecule identification, and generates benchmarks for the results.
 
-## Results
 
-Final statistics on the dataset are stored in results.csv file
+## Prerequisites
 
-## Setting up the Project
+1. **Python Environment**: Ensure you have Python 3.8+ installed.
+2. **Required Libraries**: Install the following packages before running the script:
+   ```zsh
+    pip install pandas==2.2.2 tqdm==4.66.5 openai==1.52.0
+   ```
+3. **API Key**: Obtain your OpenAI API key and keep it ready.
 
-Follow these steps to set up the project on your local machine:
 
-### Prerequisites
+## How to Use
 
-- Python 3.x
-- pip package manager
-
-## Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/ATOMSLab/LLMSpectroscopy.git
+### Step 1: Setup
+Place the zip file named `H1 NMR Datasets` in the same directory as the script. This is the file structure  containing the task JSON files:
+```
+H1 NMR Datasets/
+└── Challenges/
+    ├── Hnmr_spectra_easy.json
+    ├── Hnmr_spectra_medium.json
+    └── Hnmr_spectra_hard.json
 ```
 
-2. Navigate to the project directory:
+### Step 2: Configuration
+Before running the script, update the following:
 
+1. **API Key**: Replace the placeholder in the script with your OpenAI API key:
+   ```python
+    os.environ['OPENAI_API_KEY'] = "your-api-key-here"
+   ```
+
+2. **Model Selection**: Change the GPT model to use by updating this line for every experiment:
+   ```python
+   MODEL = "gpt-4-turbo-2024-04-09"
+   ```
+
+### Step 3: Execution
+Run the script in your terminal:
 ```bash
-cd LLMSpectroscopy
+    python3 llm_script.py
 ```
 
-3. Create and activate a virtual environment :
+## Features
 
-```bash
-python3 -m venv env
-source env/bin/activate
-```
+1. **Automated Processing**:
+   - Extracts the dataset file and organizes its contents.
+   - Creates a `BENCHMARK` folder to store results.
 
-4. Install the required packages:
+2. **Prompts for Analysis**:
+   The script includes multiple prompt styles to test NMR data interpretation:
+   - **Base Prompt**: Direct identification of the molecule.
+   - **Chain of Thought (CoT)**: Encourages step-by-step reasoning.
+   - **Logic Prompt**: Focuses on logical peak and fragment analysis.
+   - **Expert Prompt**: Utilizes expert knowledge of NMR regions.
+   - **Expert + Logic**: Combines expert knowledge and logical analysis.
 
-```bash
-pip3 install -r requirements.txt
-```
+3. **Testing Configurations**:
+   Each prompt is tested under the following conditions:
+   - **Temperatures**: 0, 0.5, 0.8, 1.0.
+   - **Molecular Formula**: Included and excluded scenarios.
 
 
-## License
+## Example Output
 
-[![License](https://img.shields.io/badge/license-Apache%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
+- The script formats predictions as:
+  ```csv
+    Id,Formula,PromptType,Prediction
+    143,C9H10O,base,### Start answer ### Ethyl benzoate ### End answer###
+    ```
 
-This project is licensed under the [MIT License](LICENSE).
+
+## Logging
+The script provides detailed logging for:
+- Data extraction and validation.
+- Benchmarking progress.
+- Errors during execution.
+
+## File Structure
+
+- **Script Directory**:
+  - `H1 NMR Datasets` 
+  - `nmr_analysis_script.py`
+
+- **Generated Folders**:
+  - `BENCHMARK` 
+
+## Notes
+
+1. **Ensure Compatibility**: Use the exact library versions mentioned in the prerequisites.
+2. **Model Selection**: The default model is `gpt-4-turbo-2024-04-09`. Experiment with  newer models as available.
+3. **API Limits**: Ensure your OpenAI account has sufficient quota to run multiple API requests.
+
